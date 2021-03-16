@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB26EA0526014AEB00B34147 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA0426014AEB00B34147 /* SwiftUIView.swift */; };
 		CB80E94825FB579700ED4B84 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E94725FB579700ED4B84 /* Tests_iOS.swift */; };
 		CB80E95325FB579700ED4B84 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E95225FB579700ED4B84 /* Tests_macOS.swift */; };
 		CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB26EA0426014AEB00B34147 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOSWebApp.swift; sourceTree = "<group>"; };
 		CB80E92D25FB579600ED4B84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB80E92E25FB579600ED4B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +85,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB26EA00260147FE00B34147 /* Viewq */ = {
+			isa = PBXGroup;
+			children = (
+				CB26EA0426014AEB00B34147 /* SwiftUIView.swift */,
+			);
+			path = Viewq;
+			sourceTree = "<group>";
+		};
+		CB26EA012601481C00B34147 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB26EA022601483200B34147 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB26EA032601483C00B34147 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
 		CB80E92625FB579500ED4B84 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +129,10 @@
 		CB80E92B25FB579600ED4B84 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CB26EA032601483C00B34147 /* Intent */,
+				CB26EA022601483200B34147 /* ViewModel */,
+				CB26EA012601481C00B34147 /* Models */,
+				CB26EA00260147FE00B34147 /* Viewq */,
 				CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */,
 				CB80E92D25FB579600ED4B84 /* ContentView.swift */,
 				CB80E92E25FB579600ED4B84 /* Assets.xcassets */,
@@ -310,6 +345,7 @@
 			files = (
 				CB80E95725FB579700ED4B84 /* ContentView.swift in Sources */,
 				CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */,
+				CB26EA0526014AEB00B34147 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
