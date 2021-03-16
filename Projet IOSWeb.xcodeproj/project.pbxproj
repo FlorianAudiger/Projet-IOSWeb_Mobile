@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CB26EA0526014AEB00B34147 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA0426014AEB00B34147 /* SwiftUIView.swift */; };
+		CB26EA0F26014C6F00B34147 /* Jeux.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA0E26014C6F00B34147 /* Jeux.swift */; };
+		CB26EA1526014CB100B34147 /* JeuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA1426014CB100B34147 /* JeuViewModel.swift */; };
+		CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA1A26014CC200B34147 /* IntentGame.swift */; };
 		CB80E94825FB579700ED4B84 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E94725FB579700ED4B84 /* Tests_iOS.swift */; };
-		CB80E95325FB579700ED4B84 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E95225FB579700ED4B84 /* Tests_macOS.swift */; };
 		CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
 		CB80E95625FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
 		CB80E95725FB579700ED4B84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92D25FB579600ED4B84 /* ContentView.swift */; };
@@ -37,20 +39,19 @@
 
 /* Begin PBXFileReference section */
 		CB26EA0426014AEB00B34147 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		CB26EA0E26014C6F00B34147 /* Jeux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jeux.swift; sourceTree = "<group>"; };
+		CB26EA1426014CB100B34147 /* JeuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuViewModel.swift; sourceTree = "<group>"; };
+		CB26EA1A26014CC200B34147 /* IntentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentGame.swift; sourceTree = "<group>"; };
 		CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOSWebApp.swift; sourceTree = "<group>"; };
 		CB80E92D25FB579600ED4B84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB80E92E25FB579600ED4B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB80E93325FB579600ED4B84 /* Projet IOSWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOSWeb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB80E93625FB579600ED4B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB80E93B25FB579600ED4B84 /* Projet IOSWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOSWeb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB80E93D25FB579600ED4B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB80E93E25FB579700ED4B84 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		CB80E94325FB579700ED4B84 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB80E94725FB579700ED4B84 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		CB80E94925FB579700ED4B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB80E94E25FB579700ED4B84 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB80E95225FB579700ED4B84 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
-		CB80E95425FB579700ED4B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 		CB26EA012601481C00B34147 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB26EA0E26014C6F00B34147 /* Jeux.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +105,7 @@
 		CB26EA022601483200B34147 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CB26EA1426014CB100B34147 /* JeuViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -110,6 +113,7 @@
 		CB26EA032601483C00B34147 /* Intent */ = {
 			isa = PBXGroup;
 			children = (
+				CB26EA1A26014CC200B34147 /* IntentGame.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -119,9 +123,7 @@
 			children = (
 				CB80E92B25FB579600ED4B84 /* Shared */,
 				CB80E93525FB579600ED4B84 /* iOS */,
-				CB80E93C25FB579600ED4B84 /* macOS */,
 				CB80E94625FB579700ED4B84 /* Tests iOS */,
-				CB80E95125FB579700ED4B84 /* Tests macOS */,
 				CB80E93425FB579600ED4B84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,15 +161,6 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		CB80E93C25FB579600ED4B84 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				CB80E93D25FB579600ED4B84 /* Info.plist */,
-				CB80E93E25FB579700ED4B84 /* macOS.entitlements */,
-			);
-			path = macOS;
-			sourceTree = "<group>";
-		};
 		CB80E94625FB579700ED4B84 /* Tests iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,15 +168,6 @@
 				CB80E94925FB579700ED4B84 /* Info.plist */,
 			);
 			path = "Tests iOS";
-			sourceTree = "<group>";
-		};
-		CB80E95125FB579700ED4B84 /* Tests macOS */ = {
-			isa = PBXGroup;
-			children = (
-				CB80E95225FB579700ED4B84 /* Tests_macOS.swift */,
-				CB80E95425FB579700ED4B84 /* Info.plist */,
-			);
-			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,8 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB80E95725FB579700ED4B84 /* ContentView.swift in Sources */,
+				CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */,
+				CB26EA0F26014C6F00B34147 /* Jeux.swift in Sources */,
 				CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */,
 				CB26EA0526014AEB00B34147 /* SwiftUIView.swift in Sources */,
+				CB26EA1526014CB100B34147 /* JeuViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB80E95325FB579700ED4B84 /* Tests_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
