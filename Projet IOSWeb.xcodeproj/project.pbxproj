@@ -12,6 +12,7 @@
 		CB26EA1526014CB100B34147 /* JeuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA1426014CB100B34147 /* JeuViewModel.swift */; };
 		CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA1A26014CC200B34147 /* IntentGame.swift */; };
 		CB2829702602204C00EA2184 /* exhibitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28296F2602204C00EA2184 /* exhibitor.swift */; };
+		CB2829762602224600EA2184 /* contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2829752602224600EA2184 /* contact.swift */; };
 		CB80E94825FB579700ED4B84 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E94725FB579700ED4B84 /* Tests_iOS.swift */; };
 		CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
 		CB80E95625FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
@@ -44,6 +45,7 @@
 		CB26EA1426014CB100B34147 /* JeuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuViewModel.swift; sourceTree = "<group>"; };
 		CB26EA1A26014CC200B34147 /* IntentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentGame.swift; sourceTree = "<group>"; };
 		CB28296F2602204C00EA2184 /* exhibitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exhibitor.swift; sourceTree = "<group>"; };
+		CB2829752602224600EA2184 /* contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contact.swift; sourceTree = "<group>"; };
 		CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOSWebApp.swift; sourceTree = "<group>"; };
 		CB80E92D25FB579600ED4B84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB80E92E25FB579600ED4B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				CB26EA0E26014C6F00B34147 /* Jeux.swift */,
 				CB28296F2602204C00EA2184 /* exhibitor.swift */,
+				CB2829752602224600EA2184 /* contact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */,
 				CB26EA0F26014C6F00B34147 /* Jeux.swift in Sources */,
 				CB2829702602204C00EA2184 /* exhibitor.swift in Sources */,
+				CB2829762602224600EA2184 /* contact.swift in Sources */,
 				CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */,
 				CB26EA0526014AEB00B34147 /* SwiftUIView.swift in Sources */,
 				CB26EA1526014CB100B34147 /* JeuViewModel.swift in Sources */,
