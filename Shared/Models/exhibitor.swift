@@ -7,21 +7,13 @@
 
 import Foundation
 
+// Un exhibitor ne sera ici qu'un editeur de jeu, on n'a pas besoin d'informations supplémentaires.
 class Exhibitor {
 
     public var name : String
-    public var contacts : [Contact]
-    public var mainContact : Contact
-    //public var booking :
-    public var publisherOnly : Bool
-    public var gameList : Game
-    public var gameBookedList : [Game]
+    public var gameList : [Game]
     
-    init(name: String, contacts: [Contact], mainContact: Contact, publisherOnly: Bool, gameList: Game, gameBookedList: [Game]) {
+    init(name: String, gameList: [Game]) {
         self.name = name
-        self.contacts = contacts
-        self.mainContact = mainContact
-        self.publisherOnly = publisherOnly
         self.gameList = gameList
-        self.gameBookedList = gameBookedList
     }}
