@@ -18,14 +18,44 @@ struct GameDetail: View {
     var body: some View {
         VStack{
             HStack{
+                Image(systemName: "gamecontroller")
                 Text("Nom du jeu :")
                 Text("\(game.name)")
-                Spacer()
             }
             HStack{
+                Image(systemName: "doc.append")
+                Text("Editeur :")
+                Text("\(game.name)")
+            }
+            HStack{
+                Image(systemName: "person")
+                Text("Age minimum")
+                Text("\(game.duration)")
+            }
+            HStack{
+                Image(systemName: "timer")
                 Text("Durée du jeu :")
                 Text("\(game.duration)")
-                Spacer()
+            }
+            HStack{
+                Image(systemName: "person.3")
+                Text("Nombre de joueurs :")
+                Text("\(game.duration)")
+            }
+            HStack{
+                Image(systemName: "tag")
+                Text("Categorie :")
+                Text("\(game.duration)")
+            }
+            HStack{
+                Image(systemName: "doc.text")
+                Text("Notice :")
+                Text("\(game.duration)")
+            }
+            HStack{
+                Image(systemName: "arrow.down.circle")
+                Text("Description:")
+                Text("\(game.duration)")
             }
         }
     }
