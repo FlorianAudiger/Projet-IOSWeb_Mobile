@@ -28,34 +28,32 @@ struct GameDetail: View {
                 Text("\(game.name)")
             }
             HStack{
-                Image(systemName: "person")
-                Text("Age minimum")
-                Text("\(game.duration)")
+ 
             }
             HStack{
                 Image(systemName: "timer")
-                Text("Durée du jeu :")
-                Text("\(game.duration)")
-            }
-            HStack{
+                Text("\(game.duration)"+"'")
                 Image(systemName: "person.3")
-                Text("Nombre de joueurs :")
-                Text("\(game.duration)")
+                Text("\(game.nbPlayersMin)"+"-"+"\(game.nbPlayersMax)")
+                Image(systemName: "person")
+                Text("\(game.ageMin)"+"+")
             }
             HStack{
                 Image(systemName: "tag")
                 Text("Categorie :")
-                Text("\(game.duration)")
+                Text("\(game.category)")
             }
             HStack{
                 Image(systemName: "doc.text")
                 Text("Notice :")
-                Text("\(game.duration)")
+                Text("\(game.notice)")
             }
             HStack{
                 Image(systemName: "arrow.down.circle")
                 Text("Description:")
-                Text("\(game.duration)")
+            }
+            HStack{
+                Text("\(game.description)")
             }
         }
     }
@@ -63,6 +61,6 @@ struct GameDetail: View {
 
 struct GameDetail_Previews: PreviewProvider {
     static var previews: some View {
-        GameDetail(GameViewModel(Game(name: "gameName", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "gameNotice", description: "gameDescription", exhibitorId: 1, prototypeGame: false)))
+        GameDetail(GameViewModel(Game(name: "Monopoly", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "Vidéo", description: " Le but du jeu consiste à ruiner ses concurrents par des opérations immobilières. ", exhibitorId: 1, prototypeGame: false)))
     }
 }
