@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct ButtonSearchView: View {
+var body: some View {
+    Text("Rechercher")
+    Image(systemName: "1.magnifyingglass")
+        .padding()
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+}
+}
+
+
+
 struct SearchView: View {
     @State private var selectionCategory = 0
     @State private var selectionPublisher = 0
@@ -57,14 +70,14 @@ struct SearchView: View {
                     }
                 }
                 Section {
-
-                    Button{
-                        print("Nothing")
-                        //NavigationLink(destination: ContentView()){}
-                        
-                    } label : {
-                        Text("Rechercher")
-                        Image(systemName: "1.magnifyingglass")                    }
+                    NavigationLink(destination: ContentView()) {
+                                   ButtonSearchView()
+                               }
+                    //Button{
+                    //    print("Nothing")
+                    //} label : {
+                    //    Text("Rechercher")
+                    //    Image(systemName: "1.magnifyingglass")                    }
                 }
 
                 
