@@ -13,6 +13,7 @@
 		B474999626025E0C002E9387 /* GameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B474999526025E0C002E9387 /* GameDetail.swift */; };
 		CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB26EA1A26014CC200B34147 /* IntentGame.swift */; };
 		CB2829702602204C00EA2184 /* exhibitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB28296F2602204C00EA2184 /* exhibitor.swift */; };
+		CB67AFAB260493C30056AFB7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB67AFAA260493C30056AFB7 /* MenuView.swift */; };
 		CB6D60C42603E9B100320864 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D60C32603E9B100320864 /* SearchView.swift */; };
 		CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
 		CB80E95625FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
@@ -46,6 +47,7 @@
 		B474999526025E0C002E9387 /* GameDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetail.swift; sourceTree = "<group>"; };
 		CB26EA1A26014CC200B34147 /* IntentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentGame.swift; sourceTree = "<group>"; };
 		CB28296F2602204C00EA2184 /* exhibitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exhibitor.swift; sourceTree = "<group>"; };
+		CB67AFAA260493C30056AFB7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CB6D60C32603E9B100320864 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOSWebApp.swift; sourceTree = "<group>"; };
 		CB80E92D25FB579600ED4B84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				B474998126025CD6002E9387 /* GameItem.swift */,
 				B474999526025E0C002E9387 /* GameDetail.swift */,
 				CB6D60C32603E9B100320864 /* SearchView.swift */,
+				CB67AFAA260493C30056AFB7 /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				B474998826025D61002E9387 /* GameViewModel.swift in Sources */,
 				CB80E95725FB579700ED4B84 /* ContentView.swift in Sources */,
 				B468D3652602580600692CD7 /* Game.swift in Sources */,
+				CB67AFAB260493C30056AFB7 /* MenuView.swift in Sources */,
 				B474998226025CD6002E9387 /* GameItem.swift in Sources */,
 				CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */,
 				CB2829702602204C00EA2184 /* exhibitor.swift in Sources */,

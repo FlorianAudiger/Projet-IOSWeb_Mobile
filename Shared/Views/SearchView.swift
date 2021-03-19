@@ -60,6 +60,8 @@ struct SearchView: View {
 
                     Button{
                         print("Nothing")
+                        //NavigationLink(destination: ContentView()){}
+                        
                     } label : {
                         Text("Rechercher")
                         Image(systemName: "1.magnifyingglass")                    }
