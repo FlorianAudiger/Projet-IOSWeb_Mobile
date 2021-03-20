@@ -43,9 +43,11 @@ var body: some View {
 
 struct MenuView: View {
     var body: some View {
-        
+
         NavigationView {
-            
+            ZStack{
+                Image("background")
+                    .ignoresSafeArea()
         VStack{
             
             NavigationLink(destination: ContentView()) {
@@ -62,7 +64,7 @@ struct MenuView: View {
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
         
         }
-        
+        }
     }
 }
 
