@@ -13,7 +13,7 @@ struct ContentView: View {
         GameViewModel(Game(name: "gameName2", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 60, category: "Child", notice: "gameNotice", description: "gameDescription", exhibitorId: 1, prototypeGame: false)),
     ]
     var body: some View {
-        NavigationView{
+        //NavigationView{
             List{
                 ForEach(simulatedGameList){ game in
                     NavigationLink(
@@ -25,7 +25,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Liste des jeux")
-        }
+        //}
     }
 }
 

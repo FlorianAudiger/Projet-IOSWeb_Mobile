@@ -29,7 +29,7 @@ struct SearchView: View {
     
      var body: some View {
          
-         NavigationView {
+         //NavigationView {
              Form {
                  Section {
                      Picker("Filtrer par editeur", selection: $selectionPublisher) {
@@ -83,10 +83,9 @@ struct SearchView: View {
                 
                 
              }.navigationBarTitle("Rechercher un jeu")
-            
 
             
-         }
+         //}
      }
 }
 
