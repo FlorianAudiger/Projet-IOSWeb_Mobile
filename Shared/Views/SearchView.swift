@@ -36,6 +36,7 @@ struct SearchView: View {
                          Text("Tous").tag(0)
                          Text("Gigamic").tag(1)
                          Text("Hasbro").tag(2)
+                        
                      }
                      
                      //.labelsHidden() // Permet de masquer le label
@@ -72,12 +73,7 @@ struct SearchView: View {
                 Section {
                     NavigationLink(destination: ContentView()) {
                                    ButtonSearchView()
-                               }
-                    //Button{
-                    //    print("Nothing")
-                    //} label : {
-                    //    Text("Rechercher")
-                    //    Image(systemName: "1.magnifyingglass")                    }
+                                }
                 }
 
                 
