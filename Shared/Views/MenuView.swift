@@ -36,6 +36,7 @@ var body: some View {
         .background(Color.green)
         .foregroundColor(.white)
         .cornerRadius(8)
+        .padding(.top, 15.0)
 }
 }
 
@@ -61,6 +62,7 @@ struct MenuView: View {
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
         
         }
+        
     }
 }
 
