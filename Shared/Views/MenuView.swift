@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ButtonViewListeDesJeux: View {
+struct ButtonListeDesJeux: View {
 var body: some View {
     Text("Liste des jeux")
         .padding()
@@ -19,11 +19,21 @@ var body: some View {
 }
 }
 
-struct ButtonViewRechercherUnJeu: View {
+struct ButtonRechercherUnJeu: View {
 var body: some View {
     Text("Rechercher un jeu")
         .padding()
         .background(Color.orange)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+}
+}
+
+struct ButtonInformations: View {
+var body: some View {
+    Text("Informations sur le festival")
+        .padding()
+        .background(Color.green)
         .foregroundColor(.white)
         .cornerRadius(8)
 }
@@ -38,19 +48,16 @@ struct MenuView: View {
         VStack{
             
             NavigationLink(destination: ContentView()) {
-                           ButtonViewListeDesJeux()
+                           ButtonListeDesJeux()
             }
             NavigationLink(destination: SearchView()) {
-                           ButtonViewRechercherUnJeu()
+                           ButtonRechercherUnJeu()
+            }
+            NavigationLink(destination: SearchView()) {
+                           ButtonInformations()
             }
             
-            
-            Button("Informations sur le festival") {
-                
-            }.padding()
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(8)        }
+       }
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
         
         }
