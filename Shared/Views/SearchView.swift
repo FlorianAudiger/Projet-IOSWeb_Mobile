@@ -27,6 +27,13 @@ struct SearchView: View {
     @State private var selectionNumberOfPlayers = 0
     @State private var selectionDuration = 0
     
+    var simulatedGameList = [
+        ZoneViewModel(Zone(name: "gameName", gameList:[])),
+        ZoneViewModel(Zone(name: "gameNa2me", gameList: [])),
+    ]
+    
+    
+    
      var body: some View {
          
          //NavigationView {
@@ -52,6 +59,14 @@ struct SearchView: View {
                 Section {
                     Picker("Filtrer par zone", selection: $selectionZone) {
                        Text("Toutes").tag(0)
+
+                        //
+                        //    for zone in (simulatedGameList){
+                        //            View(self)
+                        //            Text(zone.name).tag(1)
+                        //    }
+                        
+                        
                        Text("1").tag(1)
                        Text("2").tag(2)
                     }
@@ -59,15 +74,20 @@ struct SearchView: View {
                 Section {
                     Picker("Filtrer par nombre de joueurs", selection: $selectionNumberOfPlayers) {
                        Text("Tous").tag(0)
-                       Text("2 joueurs").tag(1)
-                       Text("3 Joueurs").tag(2)
+                        Text("1 joueur").tag(1)
+                       Text("2 joueurs").tag(2)
+                       Text("3 Joueurs").tag(3)
+                        Text("4 joueurs et plus").tag(4)
+                        Text("8 Joueurs et plus").tag(5)
                     }
                 }
                 Section {
                     Picker("Filtrer par durée", selection: $selectionDuration) {
                        Text("Toutes").tag(0)
-                       Text("<5'").tag(1)
-                       Text("Aventure").tag(2)
+                       Text("Entre 1 et 10 min").tag(1)
+                       Text("Entre 11 et 30min").tag(2)
+                        Text("Plus de 30 min").tag(3)
+                        
                     }
                 }
                 Section {
