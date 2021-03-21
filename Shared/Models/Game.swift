@@ -17,10 +17,10 @@ class Game{
     public var category : String
     public var notice : String
     public var description : String
-    public var exhibitorId : Int
+    public var publisher : String
     public var prototypeGame : Bool
     
-    internal init(name: String, ageMin: Int, nbPlayersMin: Int, nbPlayersMax: Int, duration: Int, category: String, notice: String, description: String, exhibitorId: Int, prototypeGame: Bool) {
+    internal init(name: String, ageMin: Int, nbPlayersMin: Int, nbPlayersMax: Int, duration: Int, category: String, notice: String, description: String, publisher: String, prototypeGame: Bool) {
         self.name = name
         self.ageMin = ageMin
         self.nbPlayersMin = nbPlayersMin
@@ -29,7 +29,7 @@ class Game{
         self.category = category
         self.notice = notice
         self.description = description
-        self.exhibitorId = exhibitorId
+        self.publisher = publisher
         self.prototypeGame = prototypeGame
     }
 }

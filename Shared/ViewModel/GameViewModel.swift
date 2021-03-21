@@ -17,6 +17,7 @@ class GameViewModel: Identifiable {
     private var model: Game
     
     var name: String
+    var publisher: String
     var duration: Int
     var nbPlayersMin : Int
     var nbPlayersMax : Int
