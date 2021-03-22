@@ -59,6 +59,10 @@ struct MenuView: View {
             NavigationLink(destination: SearchView()) {
                            ButtonInformations()
             }
+            Button("Button title") {
+                print("Button tapped!")
+            }
+            
             
        }
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)

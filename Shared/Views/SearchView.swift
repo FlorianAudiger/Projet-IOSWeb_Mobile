@@ -35,8 +35,8 @@ struct SearchView: View {
     
     
      var body: some View {
-         
          //NavigationView {
+
              Form {
                  Section {
                      Picker("Filtrer par editeur", selection: $selectionPublisher) {
