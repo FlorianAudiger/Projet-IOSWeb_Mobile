@@ -15,15 +15,20 @@ public class DecodeGame: ObservableObject {
     }
     
     func load() {
-        let url = URL(string: "https://festivaldujeu.herokuapp.com/api/gameBooking/allGames")!
+        let urlFestival = URL(string: "https://festivaldujeu.herokuapp.com/api/festival/current")!
+        let currentFestivalId = "myId"
+        
+        let parameters = ["festivalId":currentFestivalId]
+        let urlGames = URL(string: "https://festivaldujeu.herokuapp.com/api/gameBooking/allGames")!
     
-        URLSession.shared.dataTask(with: url) {(data,response,error) in
+        URLSession.shared.dataTask(with: urlGames) {(data,response,error) in
             do {
                 if let d = data {
                     let decodedLists = try JSONDecoder().decode([GameViewModel].self, from: d)
                     DispatchQueue.main.async {
                         self.games = decodedLists
-                        print("OK")
+                        print("OK, voici les jeux récupérés :")
+                        print(self.games)
                     }
                 }else {
                     print("No Data")

@@ -1,35 +1,68 @@
+
 //
-//  ContentView.swift
-//  Shared
+//  MenuView.swift
+//  Projet IOSWeb (iOS)
 //
-//  Created by user190534 on 3/12/21.
+//  Created by user190534 on 3/19/21.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    var simulatedGameList = [
-        GameViewModel(Game(name: "gameName", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "gameNotice", description: "gameDescription", publisher: "gamePublisher1", prototypeGame: false)),
-        GameViewModel(Game(name: "gameName2", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 60, category: "Child", notice: "gameNotice", description: "gameDescription", publisher: "gamePublisher2", prototypeGame: false)),
-    ]
+
+
+struct ButtonListeDesJeux: View {
     var body: some View {
-        //NavigationView{
-            List{
-                ForEach(simulatedGameList){ game in
-                    NavigationLink(
-                        destination:GameDetail(game)
-                        
-                    ){
-                        GameItem(game)
-                    }
-                }
-            }
-            .navigationTitle("Liste des jeux")
-               //}
+        Text("Liste des jeux")
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(8)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ButtonRechercherUnJeu: View {
+    var body: some View {
+        Text("Rechercher un jeu")
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+    }
+    }
+
+
+struct ContentView: View {
+    var body: some View {
+
+        NavigationView {
+            ZStack{
+                Image("background")
+                    .ignoresSafeArea()
+        VStack{
+            VStack{
+                Text("Bienvenue au festival 2021")
+                Text("Il se déroulera au Corum gnagnagna")
+            }
+            NavigationLink(destination: GameList()) {
+                           ButtonListeDesJeux()
+            }
+            NavigationLink(destination: SearchView()) {
+                           ButtonRechercherUnJeu()
+            }
+            Button("BouttonTest") {
+                print(DecodeGame())
+            }
+            
+            
+       }
+            .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
+        
+        }
+        }
+    }
+}
+
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Game{
+class Game: Decodable{
     
     public var name : String
     public var ageMin : Int
@@ -19,8 +19,9 @@ class Game{
     public var description : String
     public var publisher : String
     public var prototypeGame : Bool
+    public var zone : String
     
-    internal init(name: String, ageMin: Int, nbPlayersMin: Int, nbPlayersMax: Int, duration: Int, category: String, notice: String, description: String, publisher: String, prototypeGame: Bool) {
+    internal init(name: String, ageMin: Int, nbPlayersMin: Int, nbPlayersMax: Int, duration: Int, category: String, notice: String, description: String, publisher: String, prototypeGame: Bool, zone: String) {
         self.name = name
         self.ageMin = ageMin
         self.nbPlayersMin = nbPlayersMin
@@ -31,5 +32,6 @@ class Game{
         self.description = description
         self.publisher = publisher
         self.prototypeGame = prototypeGame
+        self.zone = zone
     }
 }

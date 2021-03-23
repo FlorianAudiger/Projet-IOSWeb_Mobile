@@ -14,7 +14,7 @@ class GameViewModel: Identifiable, Decodable {
     //Nedded to be identifiable
     let id = UUID()
     
-    //private var model: Game
+    private var model: Game
     
     var name: String
     var publisher: String
@@ -26,6 +26,7 @@ class GameViewModel: Identifiable, Decodable {
     var notice : String
     var description : String
     var prototypeGame : Bool
+    var zone : String
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -38,10 +39,12 @@ class GameViewModel: Identifiable, Decodable {
         case notice = "notice"
         case description = "description"
         case prototypeGame = "prototypeGame"
+        case zone  = "zone"
+        case model = "modelThatWillNeverBeUsed"
     }
     
     init(_ game: Game) {
-        //self.model = game
+        self.model = game
         self.name = game.name
         self.publisher = game.publisher
         self.duration = game.duration
@@ -52,7 +55,7 @@ class GameViewModel: Identifiable, Decodable {
         self.notice = game.notice
         self.description = game.description
         self.prototypeGame = game.prototypeGame
-        
+        self.zone = game.zone
     }
     
     

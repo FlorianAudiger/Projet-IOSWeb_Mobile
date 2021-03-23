@@ -53,6 +53,10 @@ struct GameDetail: View {
                 Text("Description:")
             }
             HStack{
+                Text("Zone :")
+                Text("\(game.zone)")
+            }
+            HStack{
                 Text("\(game.description)")
             }
         }
@@ -61,6 +65,6 @@ struct GameDetail: View {
 
 struct GameDetail_Previews: PreviewProvider {
     static var previews: some View {
-        GameDetail(GameViewModel(Game(name: "Monopoly", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "Vidéo", description: " Le but du jeu consiste à ruiner ses concurrents par des opérations immobilières. ", publisher: "publisher1", prototypeGame: false)))
+        GameDetail(GameViewModel(Game(name: "Monopoly", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "Vidéo", description: " Le but du jeu consiste à ruiner ses concurrents par des opérations immobilières. ", publisher: "publisher1", prototypeGame: false, zone: "ZoneNumeroUn")))
     }
 }
