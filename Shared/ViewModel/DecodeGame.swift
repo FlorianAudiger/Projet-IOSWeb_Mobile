@@ -14,36 +14,46 @@ public class DecodeGame: ObservableObject {
         load()
     }
     
-    var currentFestivalId = ""
     
     func load() {
+        var currentFestivalId = ""
+        
         let urlFestival = URL(string: "https://festivaldujeu.herokuapp.com/api/festival/current")!
-        var request = URLRequest(url: urlFestival)
-        request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        var requestFestival = URLRequest(url: urlFestival)
+        requestFestival.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: requestFestival) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)            }
+                if let festivalId = responseJSON["_id"] as? String {
+                    currentFestivalId = "\"" + festivalId.trimmingCharacters(in: .whitespacesAndNewlines) + "\"" //Remove whitespace
+                    print( "\n\n\n\n\n\nFestival id : ", currentFestivalId)
+                } else {
+                    print("cant get Id") //TODO : handle this case properly
+                }
+            } else {
+                print("cant get response") //TODO : handle this case properly
+            }
         }
-
         task.resume()
+        //WAIT UNTIL IT FINISH ?
         
-        
-        
-        
-        let parameters = ["festivalId":currentFestivalId]
+        let parameters : [String: Any] = ["festivalId": currentFestivalId]
+        let jsonParameters = try? JSONSerialization.data(withJSONObject: parameters)
         let urlGames = URL(string: "https://festivaldujeu.herokuapp.com/api/gameBooking/allGames")!
-    
+        var requestGames = URLRequest(url: urlGames)
+        requestGames.httpMethod = "GET"
+        requestGames.httpBody = jsonParameters
         URLSession.shared.dataTask(with: urlGames) {(data,response,error) in
             do {
                 if let d = data {
                     let decodedLists = try JSONDecoder().decode([GameViewModel].self, from: d)
                     DispatchQueue.main.async {
                         self.games = decodedLists
+                        print("parameters : ", parameters)
                         print("OK, voici les jeux récupérés :")
                         print(self.games)
                     }
