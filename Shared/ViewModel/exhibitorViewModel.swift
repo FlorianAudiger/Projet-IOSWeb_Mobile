@@ -15,7 +15,7 @@ class ExhibitorViewModel: Identifiable {
     private var model: Exhibitor
     
     var gameList : [Game]
-    var name: String
+    var name : String
 
     
     init(_ exhibitor: Exhibitor) {

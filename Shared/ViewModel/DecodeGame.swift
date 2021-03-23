@@ -14,9 +14,26 @@ public class DecodeGame: ObservableObject {
         load()
     }
     
+    var currentFestivalId = ""
+    
     func load() {
         let urlFestival = URL(string: "https://festivaldujeu.herokuapp.com/api/festival/current")!
-        let currentFestivalId = "myId"
+        var request = URLRequest(url: urlFestival)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)            }
+        }
+
+        task.resume()
+        
+        
+        
         
         let parameters = ["festivalId":currentFestivalId]
         let urlGames = URL(string: "https://festivaldujeu.herokuapp.com/api/gameBooking/allGames")!
