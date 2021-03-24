@@ -10,7 +10,6 @@ import Foundation
 public class DecodeGame: ObservableObject {
     @Published var games = [GameViewModel]()
     
-    @Published var currentFestivalId = ""
     
     init(){
         load()
@@ -32,61 +31,67 @@ public class DecodeGame: ObservableObject {
                 print("cant serialize")
                 return
             }
-            print("n\n\n\n\n\n Response :", responseJSON)
+            print("n\n\n\n\n\n Response :", responseJSON) // Current Festival
+            
+            guard let gameBookedList = responseJSON["gameBookedList"] as? [[String: Any]] else {
+                print("Cant get games of the current festival")
+                return
+            }
+            var tName: String
+            var tPublisher: String
+            var tDuration: Int
+            var tNbPlayersMin : Int
+            var tNbPlayersMax : Int
+            var tAgeMin : Int
+            var tCategory : String
+            var tNotice : String
+            var tDescription : String
+            var tPrototypeGame : Bool
+            var tZone : String
+            // TODO: For each game
+            if let gameBooked = gameBookedList[0] as? [String: Any] // To delete and replace with each game
+            {
+                tZone = gameBooked["zone"] as! String
+                guard let exhibitor = gameBooked["exhibitorId"] as? [String: Any] else {
+                    print("Cant get the exhibitor infos from gameBooked ",gameBooked)
+                    return
+                }
+                tPublisher = exhibitor["name"] as! String
+                guard let game = gameBooked["gameId"] as? [String: Any] else {
+                    print("Cant get the game infos from gameBooked ", gameBooked)
+                    return
+                }
+                tName = game["name"] as! String
+                print("name :", tName)
+                // Then create a new game with temp values and push it to self.games
+            }
+            //print(self.games)
+            
+            // old code, to delete when finished
+            /*
             var festivalId = ""
-                if let fId = responseJSON["_id"] as? String {
-                    festivalId = fId.trimmingCharacters(in: .whitespacesAndNewlines) //Remove whitespace
+            if let fId = responseJSON["_id"] as? String {
+                festivalId = fId.trimmingCharacters(in: .whitespacesAndNewlines) //Remove whitespace
+            } else {
+                print("cant get Id") //TODO : handle this case properly
+            }
+            print( "\n\n\n\n\n\nFestival id : ", festivalId)
+            
+            if let gameBookedList = responseJSON["gameBookedList"] as? [[String: Any]] {
+                var isCallbackDone = true
+                if let isCBDone = gameBookedList[0]["isCallbackDone"] as? Bool {
+                    isCallbackDone = isCBDone
+                    print("PRINT2, isCallBackDone :",isCallbackDone)
                 } else {
-                    print("cant get Id") //TODO : handle this case properly
+                    print("cant get isCallbackDone") //TODO : handle this case properly
                 }
-                print( "\n\n\n\n\n\nFestival id : ", festivalId)
-                
-                if let gameBookedList = responseJSON["gameBookedList"] as? [[String: Any]] {
-                    print("PRINT1")
-                    var isCallbackDone = true
-                    if let isCBDone = gameBookedList[0]["isCallbackDone"] as? Bool {
-                        isCallbackDone = isCBDone
-                        print("PRINT2, isCallBackDone :",isCallbackDone)
-                    } else {
-                        print("cant get isCallbackDone") //TODO : handle this case properly
-                    }
-                } else {
-                    print("cant get gameBookedList") //TODO : handle this case properly
-                }
-                print( "\n\n\n\n\n\nFestival id : ", festivalId)
-                
-            //}
+            } else {
+                print("cant get gameBookedList") //TODO : handle this case properly
+            }
+            print( "\n\n\n\n\n\nFestival id : ", festivalId)
+            */
+            
         }
         task.resume()
     }
-    
-    /*
-    func loadGames(currentFestivalId: String) {
-        let parameters : [String: Any] = ["festivalId": currentFestivalId]
-        let jsonParameters = try? JSONSerialization.data(withJSONObject: parameters)
-        let urlGames = URL(string: "https://festivaldujeu.herokuapp.com/api/gameBooking/allGames")!
-        var requestGames = URLRequest(url: urlGames)
-        requestGames.httpMethod = "GET"
-        requestGames.httpBody = jsonParameters
-        URLSession.shared.dataTask(with: urlGames) {(data,response,error) in
-            do {
-                if let d = data {
-                    let decodedLists = try JSONDecoder().decode([GameViewModel].self, from: d)
-                    DispatchQueue.main.async {
-                        print("parameters : ", parameters)
-                        print("festival iD : ", currentFestivalId)
-                        print("OK, voici les jeux récupérés :")
-                        print(self.games)
-                        self.games = decodedLists
-                    }
-                }else {
-                    print("No Data")
-                }
-            } catch {
-                print ("Error")
-            }
-            
-        }.resume()
-    }
- */
 }
