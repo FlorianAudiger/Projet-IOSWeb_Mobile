@@ -27,6 +27,7 @@ struct ExhibitorData: Codable {
 
 struct GameData: Codable {
     var name: String
+    var ageMin: Int?
     var duration: Int?
     var nbPlayerMin: Int?
     var nbPlayerMax: Int?
@@ -43,7 +44,7 @@ struct GameData: Codable {
 class GameViewModel: Identifiable, Decodable {
     
     //Nedded to be identifiable
-    var id = UUID()
+    let id = UUID()
     
     private var model: Game
     
