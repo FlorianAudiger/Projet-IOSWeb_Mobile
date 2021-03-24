@@ -10,13 +10,14 @@ import Foundation
 public class DecodeGame: ObservableObject {
     @Published var games = [GameViewModel]()
     
+    @Published var currentFestivalId = ""
+    
     init(){
         load()
     }
     
     
     func load() {
-        var currentFestivalId = ""
         
         let urlFestival = URL(string: "https://festivaldujeu.herokuapp.com/api/festival/current")!
         var requestFestival = URLRequest(url: urlFestival)
@@ -26,21 +27,41 @@ public class DecodeGame: ObservableObject {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                if let festivalId = responseJSON["_id"] as? String {
-                    currentFestivalId = "\"" + festivalId.trimmingCharacters(in: .whitespacesAndNewlines) + "\"" //Remove whitespace
-                    print( "\n\n\n\n\n\nFestival id : ", currentFestivalId)
+            let responseJSONraw = try? JSONSerialization.jsonObject(with: data, options: [])
+            guard let responseJSON = responseJSONraw as? [String: Any] else {
+                print("cant serialize")
+                return
+            }
+            print("n\n\n\n\n\n Response :", responseJSON)
+            var festivalId = ""
+                if let fId = responseJSON["_id"] as? String {
+                    festivalId = fId.trimmingCharacters(in: .whitespacesAndNewlines) //Remove whitespace
                 } else {
                     print("cant get Id") //TODO : handle this case properly
                 }
-            } else {
-                print("cant get response") //TODO : handle this case properly
-            }
+                print( "\n\n\n\n\n\nFestival id : ", festivalId)
+                
+                if let gameBookedList = responseJSON["gameBookedList"] as? [[String: Any]] {
+                    print("PRINT1")
+                    var isCallbackDone = true
+                    if let isCBDone = gameBookedList[0]["isCallbackDone"] as? Bool {
+                        isCallbackDone = isCBDone
+                        print("PRINT2, isCallBackDone :",isCallbackDone)
+                    } else {
+                        print("cant get isCallbackDone") //TODO : handle this case properly
+                    }
+                } else {
+                    print("cant get gameBookedList") //TODO : handle this case properly
+                }
+                print( "\n\n\n\n\n\nFestival id : ", festivalId)
+                
+            //}
         }
         task.resume()
-        //WAIT UNTIL IT FINISH ?
-        
+    }
+    
+    /*
+    func loadGames(currentFestivalId: String) {
         let parameters : [String: Any] = ["festivalId": currentFestivalId]
         let jsonParameters = try? JSONSerialization.data(withJSONObject: parameters)
         let urlGames = URL(string: "https://festivaldujeu.herokuapp.com/api/gameBooking/allGames")!
@@ -52,10 +73,11 @@ public class DecodeGame: ObservableObject {
                 if let d = data {
                     let decodedLists = try JSONDecoder().decode([GameViewModel].self, from: d)
                     DispatchQueue.main.async {
-                        self.games = decodedLists
                         print("parameters : ", parameters)
+                        print("festival iD : ", currentFestivalId)
                         print("OK, voici les jeux récupérés :")
                         print(self.games)
+                        self.games = decodedLists
                     }
                 }else {
                     print("No Data")
@@ -65,6 +87,6 @@ public class DecodeGame: ObservableObject {
             }
             
         }.resume()
-         
     }
+ */
 }

@@ -8,8 +8,6 @@
 import Foundation
 
 class GameViewModel: Identifiable, Decodable {
-
-    
     
     //Nedded to be identifiable
     let id = UUID()
@@ -57,21 +55,4 @@ class GameViewModel: Identifiable, Decodable {
         self.prototypeGame = game.prototypeGame
         self.zone = game.zone
     }
-    
-    
-    /*    func test(completion: @escaping (Response) -> ()){
-        let urlString = ""
-        if let url = URL(string: urlString){
-            URLSession.shared.dataTask(with: url){ data, res, err in
-            if let data = data{
-                print("OK")
-                let decodeur = JSONDecoder()
-                if let json = try? decodeur.decode(Response.self, from: data){
-                    print(json)
-                }
-            }
-        }.resume()
-    }
-    }
- */
 }
