@@ -7,10 +7,43 @@
 
 import Foundation
 
+struct CurrentFestivalData: Codable {
+    var gameBookedList : [GameBookedData]
+}
+
+struct GameBookedData: Codable {
+    var exhibitorId: ExhibitorData?
+    var gameId: GameData?
+    var zone: ZoneData?
+}
+
+struct ZoneData: Codable {
+    var name: String
+}
+
+struct ExhibitorData: Codable {
+    var name: String
+}
+
+struct GameData: Codable {
+    var name: String
+    var duration: Int?
+    var nbPlayerMin: Int?
+    var nbPlayerMax: Int?
+    var category: String?
+    var notice: String?
+    var description: String?
+    var prototypeGame: Bool?
+    
+    
+}
+
+
+
 class GameViewModel: Identifiable, Decodable {
     
     //Nedded to be identifiable
-    let id = UUID()
+    var id = UUID()
     
     private var model: Game
     
@@ -26,20 +59,6 @@ class GameViewModel: Identifiable, Decodable {
     var prototypeGame : Bool
     var zone : String
     
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case publisher = "publisher"
-        case duration = "duration"
-        case nbPlayersMin = "nbPlayersMin"
-        case nbPlayersMax = "nbPlayersMax"
-        case ageMin = "ageMin"
-        case category = "category"
-        case notice = "notice"
-        case description = "description"
-        case prototypeGame = "prototypeGame"
-        case zone  = "zone"
-        case model = "modelThatWillNeverBeUsed"
-    }
     
     init(_ game: Game) {
         self.model = game
