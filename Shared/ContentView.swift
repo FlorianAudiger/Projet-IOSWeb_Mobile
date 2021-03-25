@@ -9,7 +9,6 @@
 import SwiftUI
 
 
-
 struct ButtonListeDesJeux: View {
     var body: some View {
         Text("Liste des jeux")
@@ -32,38 +31,37 @@ struct ButtonRechercherUnJeu: View {
 
 
 struct ContentView: View {
+    
+    @ObservedObject var gameContainer: DecodeGame
+    
     var body: some View {
-
         NavigationView {
             ZStack{
                 Image("background")
                     .ignoresSafeArea()
-        VStack{
-            VStack{
-                Text("Bienvenue au festival 2021")
-                Text("Il se déroulera au Corum gnagnagna")
-            }
-            NavigationLink(destination: GameList()) {
+                VStack{
+                    VStack{
+                        Text("Bienvenue au festival 2021")
+                        Text("Il se déroulera au Corum gnagnagna")
+                    }
+                    NavigationLink(destination: GameList(gameContainer: gameContainer)) {
                            ButtonListeDesJeux()
-            }
-            NavigationLink(destination: SearchView()) {
+                    }
+                    NavigationLink(destination: SearchView(gameContainer: gameContainer)) {
                            ButtonRechercherUnJeu()
-            }
-            Button("BouttonTest") {
-                print(DecodeGame())
-            }
-            
-            
-       }
+                    }
+                    Button("BouttonTest") {
+                    }
+                }
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
-        
-        }
+            }
         }
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
+    static let gameContainer = DecodeGame()
     static var previews: some View {
-        ContentView()
+        ContentView(gameContainer: self.gameContainer)
     }
 }

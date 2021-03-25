@@ -7,41 +7,7 @@
 
 import Foundation
 
-struct CurrentFestivalData: Codable {
-    var gameBookedList : [GameBookedData]
-}
-
-struct GameBookedData: Codable {
-    var exhibitorId: ExhibitorData?
-    var gameId: GameData?
-    var zone: ZoneData?
-}
-
-struct ZoneData: Codable {
-    var name: String
-}
-
-struct ExhibitorData: Codable {
-    var name: String
-}
-
-struct GameData: Codable {
-    var name: String
-    var ageMin: Int?
-    var duration: Int?
-    var nbPlayerMin: Int?
-    var nbPlayerMax: Int?
-    var category: String?
-    var notice: String?
-    var description: String?
-    var prototypeGame: Bool?
-    
-    
-}
-
-
-
-class GameViewModel: Identifiable, Decodable {
+class GameViewModel: Identifiable {
     
     //Nedded to be identifiable
     let id = UUID()

@@ -9,13 +9,14 @@ import SwiftUI
 
 struct GameList: View {
     
-    @ObservedObject var apiCall = DecodeGame()
+    @ObservedObject var gameContainer: DecodeGame
 
 
     var body: some View {
+        
         //NavigationView{
             List{
-                ForEach(apiCall.games){ game in
+                ForEach(gameContainer.games, id: \.id){ game in
                     NavigationLink(
                         destination:GameDetail(game)
                     ){
@@ -28,8 +29,9 @@ struct GameList: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct GameList_Previews: PreviewProvider {
+    static let gameContainer = DecodeGame()
     static var previews: some View {
-        newGameList()
+        GameList(gameContainer: self.gameContainer)
     }
 }

@@ -50,7 +50,8 @@ struct newGameList: View {
 }
 
 struct CoontentView_Previews: PreviewProvider {
+    static let gameContainer = DecodeGame()
     static var previews: some View {
-        newGameList()
+        newGameList(gameContainer = self.gameContainer)
     }
 }

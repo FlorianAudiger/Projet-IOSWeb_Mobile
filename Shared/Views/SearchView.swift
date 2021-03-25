@@ -27,6 +27,9 @@ struct SearchView: View {
     @State private var selectionNumberOfPlayers = 0
     @State private var selectionDuration = 0
     
+    @ObservedObject var gameContainer: DecodeGame
+
+    
     var simulatedGameList = [
         ZoneViewModel(Zone(name: "gameName", gameList:[])),
         ZoneViewModel(Zone(name: "gameNa2me", gameList: [])),
@@ -91,7 +94,7 @@ struct SearchView: View {
                     }
                 }
                 Section {
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView(gameContainer: gameContainer)) {
                                    ButtonSearchView()
                                 }
                 }
@@ -106,7 +109,8 @@ struct SearchView: View {
 }
 
 struct SearchView_Previews: PreviewProvider {
+    static let gameContainer = DecodeGame()
     static var previews: some View {
-        SearchView()
+        SearchView(gameContainer: self.gameContainer)
     }
 }
