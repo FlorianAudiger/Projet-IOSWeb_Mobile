@@ -19,8 +19,6 @@ public class DecodeGame: ObservableObject {
     }
     
     func loadGames() {
-        print("\n\n\n\n\n\n\nCurrently in loadGames")
-        
         let urlFestival = URL(string: "https://festivaldujeu.herokuapp.com/api/festival/current")!
         var requestFestival = URLRequest(url: urlFestival)
         requestFestival.httpMethod = "GET"
@@ -37,14 +35,14 @@ public class DecodeGame: ObservableObject {
                 var tduration: Int
                 var tnbPlayersMin: Int
                 var tnbPlayersMax: Int
-                var tageMin = 0
+                var tageMin: Int
                 var tcategory: String
                 var tnotice: String
                 var tdescription: String
                 var tprototypeGame: Bool
-                var tzone = "zone unknown"
+                var tzone: String
                 for game in bookedGames {
-                    if let game = game.gameId{
+                    if let game = game.gameId{ // Si le bookedGame est bien associé à un game
                         tname = game.name
                         tageMin = game.ageMin ?? 0
                         tduration = game.duration ?? 0
