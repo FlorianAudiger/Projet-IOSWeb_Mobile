@@ -14,6 +14,7 @@ struct GameItem: View {
     init(_ game: GameViewModel) {
         self.game = game
     }
+    
     var body: some View {
         
         ZStack{

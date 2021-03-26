@@ -19,6 +19,6 @@ class ExhibitorViewModel: ExhibitorDelegate, ObservableObject {
         self.model.delegate = self
     }
     
-    func gameAdded(game: Game) {
+    func gameAdded(game: GameViewModel) {
     }
 }

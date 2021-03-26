@@ -12,22 +12,32 @@ struct PublisherList: View {
     
     @ObservedObject var gameContainer: DecodeGame
     
-    var publisherList = [Exhibitor]() //TODO: replace with VM
+    var publisherList = [ExhibitorViewModel]() //TODO: replace with VM
     
     init(gameContainer: DecodeGame) {
     self.gameContainer = gameContainer
         for game in gameContainer.games {
-            if let publisher = publisherList.first(where: {$0.name == game.publisher}) {
-                publisher.addGame(game: game.model)
+            if let publisher = publisherList.first(where: {$0.model.name == game.publisher}) {
+                publisher.model.addGame(game: game)
             }
             else {
-                //...
+                publisherList.append(ExhibitorViewModel(Exhibitor(name: game.publisher, gameList: [game])))
             }
         }
+        print("publisherList :", publisherList)
     }
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            ForEach(publisherList, id: \.id){ publisher in
+                NavigationLink(
+                    destination:PublisherDetails(publisher: publisher)
+                ){
+                    PublisherItem(publisher)
+                }
+            }
+        }
+        .navigationTitle("Liste des jeux")
     }
 }
 

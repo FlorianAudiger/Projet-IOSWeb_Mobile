@@ -8,22 +8,22 @@
 import Foundation
 
 protocol ExhibitorDelegate{
-    func gameAdded(game: Game)
+    func gameAdded(game: GameViewModel)
 }
 
 // Un exhibitor ne sera ici qu'un editeur de jeu, on n'a pas besoin d'informations supplémentaires.
 class Exhibitor {
 
     public var name : String
-    public var gameList : [Game]
+    public var gameList : [GameViewModel]
     var delegate: ExhibitorDelegate?
     
-    init(name: String, gameList: [Game]) {
+    init(name: String, gameList: [GameViewModel]) {
         self.name = name
         self.gameList = gameList
     }
     
-    func addGame(game: Game) {
+    func addGame(game: GameViewModel) {
         self.gameList.append(game)
         self.delegate?.gameAdded(game: game)
     }

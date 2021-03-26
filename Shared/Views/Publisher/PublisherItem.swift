@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct PublisherItem: View {
+    
+    var publisher: ExhibitorViewModel
+    
+    init(_ publisher: ExhibitorViewModel) {
+        self.publisher = publisher
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(publisher.model.name)
     }
 }
 
 struct PublisherItem_Previews: PreviewProvider {
     static var previews: some View {
-        PublisherItem()
+        PublisherItem(ExhibitorViewModel(Exhibitor(name: "Preview publisher name", gameList: [GameViewModel(Game(name: "gameName", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "gameNotice", description: "gameDescription", publisher: "gamePublisher", prototypeGame: false, zone: "MyZone"))])))
     }
 }
