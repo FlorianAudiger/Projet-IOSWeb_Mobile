@@ -36,7 +36,7 @@ struct GameDetail: View {
                 }
                 HStack{
                     Image(systemName: "doc.append")
-                    Text("\(game.name)")
+                    Text("\(game.publisher)")
                 }
                 
             }.padding(.bottom, 40.0).font(.largeTitle)
