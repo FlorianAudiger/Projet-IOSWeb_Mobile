@@ -19,9 +19,29 @@ struct ButtonListeDesJeux: View {
     }
 }
 
+struct PublisherListButton: View {
+    var body: some View {
+        Text("Liste des éditeurs")
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+    }
+}
+
+struct ZoneListButton: View {
+    var body: some View {
+        Text("Liste des zones")
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+    }
+}
+
 struct ButtonRechercherUnJeu: View {
     var body: some View {
-        Text("Rechercher un jeu")
+        Text("Rechercher un jeu (A SUPPRIMER)")
             .padding()
             .background(Color.orange)
             .foregroundColor(.white)
@@ -43,6 +63,12 @@ struct ContentView: View {
                     VStack{
                         Text("Bienvenue au festival 2021")
                         Text("Il se déroulera au Corum gnagnagna")
+                    }
+                    NavigationLink(destination: GameList(gameContainer: gameContainer)) {
+                           ButtonListeDesJeux()
+                    }
+                    NavigationLink(destination: PublisherList(gameContainer: gameContainer)) {
+                           PublisherListButton()
                     }
                     NavigationLink(destination: GameList(gameContainer: gameContainer)) {
                            ButtonListeDesJeux()

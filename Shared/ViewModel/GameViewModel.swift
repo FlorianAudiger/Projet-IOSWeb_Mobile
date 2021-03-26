@@ -12,7 +12,7 @@ class GameViewModel: Identifiable {
     //Nedded to be identifiable
     let id = UUID()
     
-    private var model: Game
+    private(set) var model: Game
     
     var name: String
     var publisher: String

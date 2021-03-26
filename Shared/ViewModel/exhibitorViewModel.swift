@@ -7,20 +7,18 @@
 
 import Foundation
 
-class ExhibitorViewModel: Identifiable {
+class ExhibitorViewModel: ExhibitorDelegate, ObservableObject {
 
     //Nedded to be identifiable
     let id = UUID()
     
-    private var model: Exhibitor
-    
-    var gameList : [Game]
-    var name : String
-
+    @Published private(set) var model: Exhibitor
     
     init(_ exhibitor: Exhibitor) {
         self.model = exhibitor
-        self.name = exhibitor.name
-        self.gameList = exhibitor.gameList
+        self.model.delegate = self
+    }
+    
+    func gameAdded(game: Game) {
     }
 }
