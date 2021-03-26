@@ -16,20 +16,46 @@ struct GameDetail: View {
     }
     
     var body: some View {
+        
+        ZStack{
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                .shadow(radius: 7, y:2)
+                .frame(width: UIScreen.main.bounds.width-32, height: UIScreen.main.bounds.height - 200, alignment: .center)
+        
+        
         VStack{
-            HStack{
-                Image(systemName: "gamecontroller")
-                Text("Nom du jeu :")
-                Text("\(game.name)")
-            }
-            HStack{
-                Image(systemName: "doc.append")
-                Text("Editeur :")
-                Text("\(game.name)")
-            }
-            HStack{
+            VStack{
+                
  
+                    
+                    HStack{
+                    Image(systemName: "gamecontroller")
+     
+                    Text("\(game.name)")
+                }
+                HStack{
+                    Image(systemName: "doc.append")
+                    Text("\(game.name)")
+                }
+                
+            }.padding(.bottom, 40.0).font(.largeTitle)
+            
+            
+            VStack{
+            HStack{
+                Image(systemName: "tag")
+                Text("Categorie :")
+                Text("\(game.category)")
             }
+            HStack{
+                Image(systemName: "flag")
+                Text("Zone :")
+                Text("\(game.zone)")
+            }
+                
+            }.padding(.bottom, 30.0).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            VStack{
             HStack{
                 Image(systemName: "timer")
                 Text("\(game.duration)"+"'")
@@ -37,30 +63,40 @@ struct GameDetail: View {
                 Text("\(game.nbPlayersMin)"+"-"+"\(game.nbPlayersMax)")
                 Image(systemName: "person")
                 Text("\(game.ageMin)"+"+")
-            }
-            HStack{
-                Image(systemName: "tag")
-                Text("Categorie :")
-                Text("\(game.category)")
-            }
+            }.font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+            .padding(.bottom, 30.0)
+
+                VStack{
             HStack{
                 Image(systemName: "doc.text")
                 Text("Notice :")
                 Text("\(game.notice)")
+                Spacer()
             }
             HStack{
                 Image(systemName: "arrow.down.circle")
-                Text("Description:")
+                Text("Description")
+                Spacer()
             }
+
             HStack{
-                Text("Zone :")
-                Text("\(game.zone)")
-            }
-            HStack{
+                
                 Text("\(game.description)")
+                Spacer()
+                    
             }
-        }
+                }.padding(.horizontal, 30.0).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }
+            
+            
+            
+        }.foregroundColor(Color.black)
+            
+        
+        
     }
+    }
+        
 }
 
 struct GameDetail_Previews: PreviewProvider {
