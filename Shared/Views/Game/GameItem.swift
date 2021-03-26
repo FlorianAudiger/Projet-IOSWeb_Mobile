@@ -15,10 +15,29 @@ struct GameItem: View {
         self.game = game
     }
     var body: some View {
-        HStack{
-            Text(game.name)
-            Text(game.publisher)
-        }
+        
+        ZStack{
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(.white)
+                .shadow(radius: 1, y:1)
+                .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .center)
+            HStack{
+                Text(game.name)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.leading, 60.0)
+                Text(game.publisher)
+                    .padding(.leading, 36.0)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.purple)
+                    .padding(.trailing)
+                
+            }
+            
+}
+
     }
 }
 
