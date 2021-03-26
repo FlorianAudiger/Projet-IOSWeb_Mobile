@@ -11,21 +11,22 @@ struct GameList: View {
     
     @ObservedObject var gameContainer: DecodeGame
 
+    @State private var searchText = ""
+
 
     var body: some View {
         
-        //NavigationView{
-            List{
-                ForEach(gameContainer.games, id: \.id){ game in
-                    NavigationLink(
-                        destination:GameDetail(game)
-                    ){
-                        GameItem(game)
-                    }
+        VStack{
+            SearchBar(text: $searchText)
+            List(gameContainer.games.filter({searchText.isEmpty ? true: $0.name.lowercased().contains(searchText.lowercased())})) { game in
+                NavigationLink(
+                    destination:GameDetail(game)
+                ){
+                    GameItem(game)
                 }
             }
             .navigationTitle("Liste des jeux")
-               //}
+        }
     }
 }
 

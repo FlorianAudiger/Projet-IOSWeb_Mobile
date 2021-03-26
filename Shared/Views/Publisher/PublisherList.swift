@@ -7,12 +7,20 @@
 
 import SwiftUI
 
+struct SearchButton: View {
+    var body: some View {
+        Text("")
+    }
+}
+
 
 struct PublisherList: View {
     
     @ObservedObject var gameContainer: DecodeGame
+
     
-    var publisherList = [ExhibitorViewModel]() //TODO: replace with VM
+    var publisherList = [ExhibitorViewModel]()
+    @State private var searchText = ""
     
     init(gameContainer: DecodeGame) {
     self.gameContainer = gameContainer
@@ -26,18 +34,23 @@ struct PublisherList: View {
         }
         print("publisherList :", publisherList)
     }
+    
+    
 
     var body: some View {
-        List{
-            ForEach(publisherList, id: \.id){ publisher in
-                NavigationLink(
-                    destination:PublisherDetails(publisher: publisher)
-                ){
-                    PublisherItem(publisher)
-                }
+        VStack{
+            SearchBar(text: $searchText)
+            List(publisherList.filter({searchText.isEmpty ? true: $0.model.name.lowercased().contains(searchText.lowercased())})) { publisher in
+                //ForEach(publisherList, id: \.id){ publisher in
+                    NavigationLink(
+                        destination:PublisherDetails(publisher: publisher)
+                    ){
+                        PublisherItem(publisher)
+                    }
+                //}
             }
+            .navigationTitle("Liste des éditeurs")
         }
-        .navigationTitle("Liste des jeux")
     }
 }
 

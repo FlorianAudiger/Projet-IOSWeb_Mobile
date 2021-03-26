@@ -19,11 +19,13 @@ struct PublisherDetails: View {
             }
             VStack{
                 Text(" Jeux publiés :")
-                ForEach(publisher.model.gameList, id: \.id){ game in
-                    NavigationLink(
-                        destination:GameDetail(game)
-                    ){
-                        Text(game.name)
+                List{
+                    ForEach(publisher.model.gameList, id: \.id){ game in
+                        NavigationLink(
+                            destination:GameDetail(game)
+                        ){
+                            Text(game.name)
+                        }
                     }
                 }
             }

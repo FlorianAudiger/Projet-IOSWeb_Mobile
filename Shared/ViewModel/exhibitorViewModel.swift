@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ExhibitorViewModel: ExhibitorDelegate, ObservableObject {
+class ExhibitorViewModel: ExhibitorDelegate, ObservableObject, Identifiable {
 
     //Nedded to be identifiable
     let id = UUID()
