@@ -13,9 +13,12 @@ struct ButtonListeDesJeux: View {
     var body: some View {
         Text("Liste des jeux")
             .padding()
-            .background(Color.orange)
+            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
+            .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(8)
+            .opacity(0.90)
+
     }
 }
 
@@ -23,9 +26,11 @@ struct PublisherListButton: View {
     var body: some View {
         Text("Liste des éditeurs")
             .padding()
-            .background(Color.orange)
+            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
+            .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(8)
+            .opacity(0.90)
     }
 }
 
@@ -33,9 +38,11 @@ struct ZoneListButton: View {
     var body: some View {
         Text("Liste des zones")
             .padding()
-            .background(Color.orange)
+            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
+            .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(8)
+            .opacity(0.90)
     }
 }
 
@@ -43,9 +50,11 @@ struct ButtonRechercherUnJeu: View {
     var body: some View {
         Text("Rechercher un jeu (A SUPPRIMER)")
             .padding()
+            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
             .background(Color.orange)
             .foregroundColor(.white)
             .cornerRadius(8)
+            .opacity(0.90)
     }
     }
 
@@ -57,12 +66,32 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Image("background")
+                Image("bg")
+                    .resizable()
                     .ignoresSafeArea()
+ 
                 VStack{
+                        
+                        Image("logo")
+                            .resizable()
+                            .padding(.top, 0.0)
+                            .frame(width: 100.0, height: 100)
+                    Spacer()
                     VStack{
+                        ZStack{                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(.gray)
+                            .shadow(radius: 1, y:1)
+                            .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .center)
+                            .opacity(0.8)
+                        
                         Text("Bienvenue au festival 2021")
-                        Text("Il se déroulera au Corum gnagnagna")
+                            .font(.title)
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        }
+                        
+                        
                     }
                     NavigationLink(destination: GameList(gameContainer: gameContainer)) {
                            ButtonListeDesJeux()
@@ -73,11 +102,7 @@ struct ContentView: View {
                     NavigationLink(destination: GameList(gameContainer: gameContainer)) {
                            ButtonListeDesJeux()
                     }
-                    NavigationLink(destination: SearchView(gameContainer: gameContainer)) {
-                           ButtonRechercherUnJeu()
-                    }
-                    Button("BouttonTest") {
-                    }
+                    Spacer()
                 }
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
             }
