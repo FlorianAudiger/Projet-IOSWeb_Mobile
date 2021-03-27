@@ -16,12 +16,16 @@ struct GameDetail: View {
     }
     
     var body: some View {
-        
+        ZStack{
+        Image("bg3")
+            .resizable()
+            .ignoresSafeArea()
         ZStack{
             RoundedRectangle(cornerRadius: 8)
                 .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                 .shadow(radius: 7, y:2)
                 .frame(width: UIScreen.main.bounds.width-32, height: UIScreen.main.bounds.height - 200, alignment: .center)
+                .opacity(0.85)
         
         
         VStack{
@@ -90,7 +94,7 @@ struct GameDetail: View {
         }.foregroundColor(Color.black)
             
         
-        
+        }
     }
     }
         

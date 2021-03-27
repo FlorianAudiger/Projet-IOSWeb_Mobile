@@ -19,9 +19,11 @@ struct GameList: View {
     
 
     var body: some View {
-        
+
         VStack{
+
             SearchBar(text: $searchText)
+            
             List(gameContainer.games.filter({searchText.isEmpty ? true: $0.name.lowercased().contains(searchText.lowercased())})) { game in
                 NavigationLink(
                     destination:GameDetail(game)
@@ -31,7 +33,7 @@ struct GameList: View {
             }.padding(.trailing, -24.0)
             .navigationTitle("Liste des jeux")
         }
-    }
+        }
 }
 
 struct GameList_Previews: PreviewProvider {
