@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B420DCC6260A86FC0086121F /* GameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420DCC5260A86FC0086121F /* GameList.swift */; };
+		B4434D92260F95E800596933 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4434D91260F95E800596933 /* LoadingView.swift */; };
 		B45ED4D1260CAB7700399D64 /* GameListHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45ED4D0260CAB7700399D64 /* GameListHelper.swift */; };
 		B468D3652602580600692CD7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B468D3642602580600692CD7 /* Game.swift */; };
 		B474998226025CD6002E9387 /* GameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B474998126025CD6002E9387 /* GameItem.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		B420DCC5260A86FC0086121F /* GameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameList.swift; sourceTree = "<group>"; };
+		B4434D91260F95E800596933 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B45ED4D0260CAB7700399D64 /* GameListHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListHelper.swift; sourceTree = "<group>"; };
 		B468D3642602580600692CD7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B474998126025CD6002E9387 /* GameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B4B20968260E929C00529A6A /* SearchBar.swift */,
+				B4434D91260F95E800596933 /* LoadingView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				B420DCC6260A86FC0086121F /* GameList.swift in Sources */,
 				B474998226025CD6002E9387 /* GameItem.swift in Sources */,
 				CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */,
+				B4434D92260F95E800596933 /* LoadingView.swift in Sources */,
 				B4B2095A260E548D00529A6A /* PublisherDetails.swift in Sources */,
 				CB2829702602204C00EA2184 /* Exhibitor.swift in Sources */,
 				B4B20969260E929C00529A6A /* SearchBar.swift in Sources */,

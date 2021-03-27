@@ -70,19 +70,19 @@ struct ContentView: View {
                             .frame(width: 100.0, height: 100)
                     Spacer()
                     VStack{
+                        /*
                         ZStack{                        RoundedRectangle(cornerRadius: 8)
                             .foregroundColor(.gray)
                             .shadow(radius: 1, y:1)
                             .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .center)
                             .opacity(0.8)
-                        
-                        Text("Bienvenue au festival 2021")
-                            .font(.title)
-                            .fontWeight(.light)
-                            .foregroundColor(Color.white)
+                        */
+                        Text("Bienvenue au \nFestival du Jeu !\n")
+                            .font(.largeTitle)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
                             .multilineTextAlignment(.center)
-                            .padding()
-                        }
+                        //}
                         
                         
                     }

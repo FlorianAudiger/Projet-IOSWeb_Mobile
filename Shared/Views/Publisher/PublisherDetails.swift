@@ -14,11 +14,11 @@ struct PublisherDetails: View {
     var body: some View {
         VStack{
             HStack {
-                Text(publisher.model.name)
-                Text("\n")
+                Text(publisher.model.name).font(.largeTitle)
+                Text("\n").font(.largeTitle)
             }
             VStack{
-                Text(" Jeux publiés :")
+                Text(" Jeux publiés :").font(.title)
                 List{
                     ForEach(publisher.model.gameList, id: \.id){ game in
                         NavigationLink(
