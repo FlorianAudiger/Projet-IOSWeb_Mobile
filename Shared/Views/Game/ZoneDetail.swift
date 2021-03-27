@@ -27,7 +27,7 @@ struct ZoneDetails: View {
                             GameItem(game)
                         }
                     }
-                }
+                }.padding(.trailing, -24.0)
             }
         }
     }

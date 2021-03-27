@@ -25,10 +25,10 @@ struct PublisherDetails: View {
                             destination:GameDetail(game)
                         ){
                             //Text(game.name)
-                            GameItem(game)
+                            GameItem2(game)
                         }
                     }
-                }
+                }.padding(.trailing, -24.0)
             }
         }
     }
