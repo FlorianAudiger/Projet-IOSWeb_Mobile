@@ -12,6 +12,8 @@ import SwiftUI
 struct ButtonListeDesJeux: View {
     var body: some View {
         Text("Liste des jeux")
+            .font(.title)
+            .fontWeight(.bold)
             .padding()
             .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
             .background(Color.green)
@@ -25,6 +27,8 @@ struct ButtonListeDesJeux: View {
 struct PublisherListButton: View {
     var body: some View {
         Text("Liste des éditeurs")
+            .font(.title)
+            .fontWeight(.bold)
             .padding()
             .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
             .background(Color.green)
@@ -74,6 +78,7 @@ struct ContentView: View {
                         
                         Text("Bienvenue au festival 2021")
                             .font(.title)
+                            .fontWeight(.light)
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.center)
                             .padding()
