@@ -63,14 +63,15 @@ struct ContentView: View {
                 Image("bg")
                     .resizable()
                     .ignoresSafeArea()
+
  
                 VStack{
                         
                         Image("logo")
                             .resizable()
-                            .padding(.top, 0.0)
+                            .padding(.all, 10.0)
                             .frame(width: 100.0, height: 100)
-                    Spacer()
+                    //Spacer()
                     VStack{
                         
                         ZStack{                        RoundedRectangle(cornerRadius: 8)
@@ -83,7 +84,7 @@ struct ContentView: View {
                         Text("Bienvenue au \nFestival du Jeu !\n")
                             .font(.largeTitle)
                             .fontWeight(.medium)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.blue)
                             .multilineTextAlignment(.center)
                         }
                         

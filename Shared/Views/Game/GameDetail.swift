@@ -51,7 +51,6 @@ struct GameDetail: View {
             }
             HStack{
                 Image(systemName: "flag")
-                Text("Zone :")
                 Text("\(game.zone)")
             }
                 
