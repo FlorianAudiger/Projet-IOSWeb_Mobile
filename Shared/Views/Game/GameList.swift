@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+
+
+
 struct GameList: View {
+    
     
     @ObservedObject var gameContainer: DecodeGame
 
     @State private var searchText = ""
-
+    
 
     var body: some View {
         
@@ -24,7 +28,7 @@ struct GameList: View {
                 ){
                     GameItem(game)
                 }
-            }
+            }.padding(.trailing, -24.0)
             .navigationTitle("Liste des jeux")
         }
     }
