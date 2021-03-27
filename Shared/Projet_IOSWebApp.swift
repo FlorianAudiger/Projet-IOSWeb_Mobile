@@ -19,7 +19,7 @@ struct Projet_IOSWebApp: App {
     var body: some Scene {
         WindowGroup {
             if (tracksLoaded){
-                ContentView(gameContainer: gameContainer)}
+                MenuView(gameContainer: gameContainer)}
             else {
                 LoadingView()
             }
