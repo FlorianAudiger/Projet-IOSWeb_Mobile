@@ -35,6 +35,7 @@
 		CBD36B69260FC8AA00EE1C61 /* ZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B68260FC8AA00EE1C61 /* ZoneItem.swift */; };
 		CBD36B6D260FC8BB00EE1C61 /* ZoneDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B6C260FC8BB00EE1C61 /* ZoneDetail.swift */; };
 		CBD36B71260FD75700EE1C61 /* GameItem2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B70260FD75700EE1C61 /* GameItem2.swift */; };
+		CBD36B75260FDEFB00EE1C61 /* ButtonGreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B74260FDEFB00EE1C61 /* ButtonGreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		CBD36B68260FC8AA00EE1C61 /* ZoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneItem.swift; path = Shared/Views/Game/ZoneItem.swift; sourceTree = SOURCE_ROOT; };
 		CBD36B6C260FC8BB00EE1C61 /* ZoneDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneDetail.swift; path = Shared/Views/Game/ZoneDetail.swift; sourceTree = SOURCE_ROOT; };
 		CBD36B70260FD75700EE1C61 /* GameItem2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItem2.swift; sourceTree = "<group>"; };
+		CBD36B74260FDEFB00EE1C61 /* ButtonGreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonGreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				B4B20968260E929C00529A6A /* SearchBar.swift */,
 				B4434D91260F95E800596933 /* LoadingView.swift */,
+				CBD36B74260FDEFB00EE1C61 /* ButtonGreen.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				B4B20952260E545F00529A6A /* PublisherList.swift in Sources */,
 				B420DCC6260A86FC0086121F /* GameList.swift in Sources */,
 				B474998226025CD6002E9387 /* GameItem.swift in Sources */,
+				CBD36B75260FDEFB00EE1C61 /* ButtonGreen.swift in Sources */,
 				CB26EA1B26014CC200B34147 /* IntentGame.swift in Sources */,
 				B4434D92260F95E800596933 /* LoadingView.swift in Sources */,
 				B4B2095A260E548D00529A6A /* PublisherDetails.swift in Sources */,

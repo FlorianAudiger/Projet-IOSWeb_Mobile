@@ -8,52 +8,7 @@
 
 import SwiftUI
 
-
-struct ButtonListeDesJeux: View {
-    var body: some View {
-        Text("Liste des jeux")
-            .font(.title)
-            .fontWeight(.bold)
-            .padding()
-            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .opacity(0.87)
-
-    }
-}
-
-struct PublisherListButton: View {
-    var body: some View {
-        Text("Liste des éditeurs")
-            .font(.title)
-            .fontWeight(.bold)
-            .padding()
-            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .opacity(0.87)
-    }
-}
-
-struct ZoneListButton: View {
-    var body: some View {
-        Text("Liste des zones")
-            .font(.title)
-            .fontWeight(.bold)
-            .padding()
-            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
-            .background(Color.green)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .opacity(0.87)
-    }
-}
-
-
-struct ContentView: View {
+struct MenuView: View {
     
     @ObservedObject var gameContainer: DecodeGame
     
@@ -91,13 +46,13 @@ struct ContentView: View {
                         
                     }
                     NavigationLink(destination: GameList(gameContainer: gameContainer)) {
-                           ButtonListeDesJeux()
+                        ButtonGreen("Liste des jeux")
                     }
                     NavigationLink(destination: PublisherList(gameContainer: gameContainer)) {
-                           PublisherListButton()
+                        ButtonGreen("Liste des éditeurs")
                     }
                     NavigationLink(destination: ZoneList(gameContainer: gameContainer)) {
-                           ZoneListButton()
+                           ButtonGreen("Liste des zones")
                     }
                     Spacer()
                 }
@@ -110,6 +65,6 @@ struct ContentView: View {
 struct MenuView_Previews: PreviewProvider {
     static let gameContainer = DecodeGame()
     static var previews: some View {
-        ContentView(gameContainer: self.gameContainer)
+        MenuView(gameContainer: self.gameContainer)
     }
 }
