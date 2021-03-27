@@ -16,7 +16,6 @@ struct ButtonGreen: View {
     }
     
     var body: some View {
-
             Text(txt)
                 .font(.title)
                 .fontWeight(.bold)
@@ -26,13 +25,11 @@ struct ButtonGreen: View {
                 .foregroundColor(.white)
                 .cornerRadius(8)
                 .opacity(0.87)
-        
-
     }
 }
 
 struct ButtonGreen_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonGreen("Lol")
+        ButtonGreen("Bouton test")
     }
 }
