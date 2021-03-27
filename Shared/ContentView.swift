@@ -46,18 +46,6 @@ struct ZoneListButton: View {
     }
 }
 
-struct ButtonRechercherUnJeu: View {
-    var body: some View {
-        Text("Rechercher un jeu (A SUPPRIMER)")
-            .padding()
-            .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
-            .background(Color.orange)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .opacity(0.90)
-    }
-    }
-
 
 struct ContentView: View {
     
