@@ -16,7 +16,26 @@ struct PublisherItem: View {
     }
     
     var body: some View {
-        Text(publisher.model.name)
+
+        ZStack{
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundColor(.white)
+                .shadow(radius: 1, y:1)
+                .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .center)
+            HStack{
+                Text(publisher.model.name)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.leading, 60.0)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.purple)
+                    .padding(.trailing)
+                
+            }
+            
+}
     }
 }
 

@@ -48,7 +48,7 @@ struct PublisherList: View {
                         PublisherItem(publisher)
                     }
                 //}
-            }
+            }.padding(.trailing, -24.0)
             .navigationTitle("Liste des éditeurs")
         }
     }

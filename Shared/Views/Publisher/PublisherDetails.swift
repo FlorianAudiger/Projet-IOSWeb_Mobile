@@ -24,7 +24,8 @@ struct PublisherDetails: View {
                         NavigationLink(
                             destination:GameDetail(game)
                         ){
-                            Text(game.name)
+                            //Text(game.name)
+                            GameItem(game)
                         }
                     }
                 }
