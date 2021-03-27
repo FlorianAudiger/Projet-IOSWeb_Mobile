@@ -40,6 +40,7 @@ struct SearchBar: View {
                             }
                         }
                     }
+                    
                 )
                 .padding(.horizontal, 10)
                 .onTapGesture {
@@ -58,7 +59,7 @@ struct SearchBar: View {
                 .transition(.move(edge: .trailing))
                 .animation(.default)
             }
-        }
+        }.padding(.top, 10.0)
     }
 }
 

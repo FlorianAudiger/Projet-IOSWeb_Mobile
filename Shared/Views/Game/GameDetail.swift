@@ -26,9 +26,6 @@ struct GameDetail: View {
         
         VStack{
             VStack{
-                
- 
-                    
                     HStack{
                     Image(systemName: "gamecontroller")
      
