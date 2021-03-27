@@ -7,20 +7,20 @@
 
 import Foundation
 
-class ZoneViewModel: Identifiable {
+class ZoneViewModel: Identifiable, ObservableObject, ZoneDelegate {
 
     //Nedded to be identifiable
     let id = UUID()
     
-    private var model: Zone
+    @Published private(set) var model: Zone
     
-    var gameList : [Game]
-    var name: String
 
-    
     init(_ zone: Zone) {
         self.model = zone
-        self.name = zone.name
-        self.gameList = zone.gameList
+        self.model.delegate = self
     }
+    
+    func gameAdded(game: GameViewModel) {
+    }
+    
 }

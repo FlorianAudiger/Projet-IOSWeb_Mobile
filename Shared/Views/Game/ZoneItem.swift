@@ -1,5 +1,5 @@
 //
-//  PublisherItem.swift
+//  ZoneItem.swift
 //  Projet IOSWeb (iOS)
 //
 //  Created by user188385 on 26/03/2021.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct PublisherItem: View {
+struct ZoneItem: View {
     
-    var publisher: ExhibitorViewModel
+    var zone: ZoneViewModel
     
-    init(_ publisher: ExhibitorViewModel) {
-        self.publisher = publisher
+    init(_ zone: ZoneViewModel) {
+        self.zone = zone
     }
     
     var body: some View {
@@ -23,9 +23,8 @@ struct PublisherItem: View {
                 .shadow(radius: 1, y:1)
                 .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .center)
             HStack{
-                Image(systemName: "doc.append")
-                    .padding(.leading, 60.0)
-                ;               Text(publisher.model.name)
+                Image(systemName: "flag")
+                    .padding(.leading, 60.0);             Text(zone.model.name)
                     .font(.title2)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -41,8 +40,8 @@ struct PublisherItem: View {
     }
 }
 
-struct PublisherItem_Previews: PreviewProvider {
+struct ZoneItem_Previews: PreviewProvider {
     static var previews: some View {
-        PublisherItem(ExhibitorViewModel(Exhibitor(name: "Preview publisher name", gameList: [GameViewModel(Game(name: "gameName", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "gameNotice", description: "gameDescription", publisher: "gamePublisher", prototypeGame: false, zone: "MyZone"))])))
+        ZoneItem(ZoneViewModel(Zone(name: "Preview zone name", gameList: [GameViewModel(Game(name: "gameName", ageMin: 6, nbPlayersMin: 2, nbPlayersMax: 4, duration: 30, category: "Child", notice: "gameNotice", description: "gameDescription", publisher: "gamePublisher", prototypeGame: false, zone: "MyZone"))])))
     }
 }

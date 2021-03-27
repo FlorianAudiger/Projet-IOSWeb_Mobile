@@ -19,7 +19,7 @@ struct ButtonListeDesJeux: View {
             .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(8)
-            .opacity(0.90)
+            .opacity(0.87)
 
     }
 }
@@ -34,19 +34,21 @@ struct PublisherListButton: View {
             .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(8)
-            .opacity(0.90)
+            .opacity(0.87)
     }
 }
 
 struct ZoneListButton: View {
     var body: some View {
         Text("Liste des zones")
+            .font(.title)
+            .fontWeight(.bold)
             .padding()
             .frame(width: UIScreen.main.bounds.width-32, height: 60, alignment: .center)
             .background(Color.green)
             .foregroundColor(.white)
             .cornerRadius(8)
-            .opacity(0.90)
+            .opacity(0.87)
     }
 }
 
@@ -70,19 +72,20 @@ struct ContentView: View {
                             .frame(width: 100.0, height: 100)
                     Spacer()
                     VStack{
-                        /*
+                        
                         ZStack{                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.white)
+                            .padding(.bottom, 40.0)
                             .shadow(radius: 1, y:1)
-                            .frame(width: UIScreen.main.bounds.width-32, height: 80, alignment: .center)
-                            .opacity(0.8)
-                        */
+                            .frame(width: UIScreen.main.bounds.width-32, height: 140, alignment: .center)
+                            .opacity(0.23)
+                        
                         Text("Bienvenue au \nFestival du Jeu !\n")
                             .font(.largeTitle)
                             .fontWeight(.medium)
                             .foregroundColor(Color.black)
                             .multilineTextAlignment(.center)
-                        //}
+                        }
                         
                         
                     }
@@ -92,8 +95,8 @@ struct ContentView: View {
                     NavigationLink(destination: PublisherList(gameContainer: gameContainer)) {
                            PublisherListButton()
                     }
-                    NavigationLink(destination: GameList(gameContainer: gameContainer)) {
-                           ButtonListeDesJeux()
+                    NavigationLink(destination: ZoneList(gameContainer: gameContainer)) {
+                           ZoneListButton()
                     }
                     Spacer()
                 }

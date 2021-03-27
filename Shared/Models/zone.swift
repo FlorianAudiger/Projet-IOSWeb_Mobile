@@ -7,12 +7,28 @@
 
 import Foundation
 
+protocol ZoneDelegate{
+    func gameAdded(game: GameViewModel)
+}
+
 class Zone {
 
     public var name : String
-    public var gameList : [Game]
+    public var gameList : [GameViewModel]
     
-    init(name: String, gameList: [Game]) {
+    var delegate: ZoneDelegate?
+    
+    init(name: String, gameList: [GameViewModel]) {
         self.name = name
         self.gameList = gameList
-    }}
+    }
+    
+    
+    func addGame(game: GameViewModel) {
+        self.gameList.append(game)
+        self.delegate?.gameAdded(game: game)
+    }
+    
+    
+    
+}

@@ -31,6 +31,9 @@
 		CB80E95825FB579700ED4B84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92D25FB579600ED4B84 /* ContentView.swift */; };
 		CB80E95925FB579700ED4B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB80E92E25FB579600ED4B84 /* Assets.xcassets */; };
 		CB80E95A25FB579700ED4B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB80E92E25FB579600ED4B84 /* Assets.xcassets */; };
+		CBD36B65260FC89E00EE1C61 /* ZoneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B64260FC89E00EE1C61 /* ZoneList.swift */; };
+		CBD36B69260FC8AA00EE1C61 /* ZoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B68260FC8AA00EE1C61 /* ZoneItem.swift */; };
+		CBD36B6D260FC8BB00EE1C61 /* ZoneDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B6C260FC8BB00EE1C61 /* ZoneDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		CB80E93325FB579600ED4B84 /* Projet IOSWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOSWeb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB80E93625FB579600ED4B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB80E93B25FB579600ED4B84 /* Projet IOSWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOSWeb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBD36B64260FC89E00EE1C61 /* ZoneList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneList.swift; path = Shared/Views/Game/ZoneList.swift; sourceTree = SOURCE_ROOT; };
+		CBD36B68260FC8AA00EE1C61 /* ZoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneItem.swift; path = Shared/Views/Game/ZoneItem.swift; sourceTree = SOURCE_ROOT; };
+		CBD36B6C260FC8BB00EE1C61 /* ZoneDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZoneDetail.swift; path = Shared/Views/Game/ZoneDetail.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 		B4B20950260E542800529A6A /* Zone */ = {
 			isa = PBXGroup;
 			children = (
+				CBD36B64260FC89E00EE1C61 /* ZoneList.swift */,
+				CBD36B68260FC8AA00EE1C61 /* ZoneItem.swift */,
+				CBD36B6C260FC8BB00EE1C61 /* ZoneDetail.swift */,
 			);
 			path = Zone;
 			sourceTree = "<group>";
@@ -317,7 +326,10 @@
 				B4434D92260F95E800596933 /* LoadingView.swift in Sources */,
 				B4B2095A260E548D00529A6A /* PublisherDetails.swift in Sources */,
 				CB2829702602204C00EA2184 /* Exhibitor.swift in Sources */,
+				CBD36B65260FC89E00EE1C61 /* ZoneList.swift in Sources */,
 				B4B20969260E929C00529A6A /* SearchBar.swift in Sources */,
+				CBD36B69260FC8AA00EE1C61 /* ZoneItem.swift in Sources */,
+				CBD36B6D260FC8BB00EE1C61 /* ZoneDetail.swift in Sources */,
 				CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */,
 				CB18DC2126074E2900608CA5 /* ZoneViewModel.swift in Sources */,
 				CB79308126093DF200AF819E /* DecodeGame.swift in Sources */,
