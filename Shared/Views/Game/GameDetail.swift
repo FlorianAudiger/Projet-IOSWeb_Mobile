@@ -69,8 +69,8 @@ struct GameDetail: View {
                 VStack{
             HStack{
                 Image(systemName: "doc.text")
-                Text("Notice :")
-                Text("\(game.notice)")
+                Link("Notice", destination: URL(string: "game.notice")!)
+                    .foregroundColor(.blue)
                 Spacer()
             }
             HStack{

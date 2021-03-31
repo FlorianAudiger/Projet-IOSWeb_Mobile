@@ -27,7 +27,7 @@ struct SearchView: View {
     @State private var selectionNumberOfPlayers = 0
     @State private var selectionDuration = 0
     
-    @ObservedObject var gameContainer: DecodeGame
+    @ObservedObject var gameContainer: SearchGamesViewModel
 
     
     var simulatedGameList = [
@@ -109,7 +109,7 @@ struct SearchView: View {
 }
 
 struct SearchView_Previews: PreviewProvider {
-    static let gameContainer = DecodeGame()
+    static let gameContainer = SearchGamesViewModel()
     static var previews: some View {
         SearchView(gameContainer: self.gameContainer)
     }

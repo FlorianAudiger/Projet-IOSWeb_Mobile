@@ -1,5 +1,5 @@
 //
-//  DecodeGame.swift
+//  SearchGamesViewModel.swift
 //  Projet IOSWeb (iOS)
 //
 //  Created by user190534 on 3/22/21.
@@ -39,7 +39,7 @@ struct GameData: Codable {
 import Foundation
 import SwiftUI
 
-public class DecodeGame: ObservableObject {
+public class SearchGamesViewModel: ObservableObject {
 
     @Published var games = [GameViewModel]()
     

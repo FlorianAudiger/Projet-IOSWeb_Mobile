@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @ObservedObject var gameContainer: DecodeGame
+    @ObservedObject var gameContainer: SearchGamesViewModel
     
     var body: some View {
         NavigationView {
@@ -63,7 +63,7 @@ struct MenuView: View {
 }
 
 struct MenuView_Previews: PreviewProvider {
-    static let gameContainer = DecodeGame()
+    static let gameContainer = SearchGamesViewModel()
     static var previews: some View {
         MenuView(gameContainer: self.gameContainer)
     }

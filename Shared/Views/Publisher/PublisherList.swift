@@ -16,13 +16,13 @@ struct SearchButton: View {
 
 struct PublisherList: View {
     
-    @ObservedObject var gameContainer: DecodeGame
+    @ObservedObject var gameContainer: SearchGamesViewModel
 
     
     var publisherList = [ExhibitorViewModel]()
     @State private var searchText = ""
     
-    init(gameContainer: DecodeGame) {
+    init(gameContainer: SearchGamesViewModel) {
     self.gameContainer = gameContainer
         for game in gameContainer.games {
             if let publisher = publisherList.first(where: {$0.model.name == game.publisher}) {
@@ -55,7 +55,7 @@ struct PublisherList: View {
 }
 
 struct PublisherList_Previews: PreviewProvider {
-    static let gameContainer = DecodeGame()
+    static let gameContainer = SearchGamesViewModel()
     static var previews: some View {
         PublisherList(gameContainer: self.gameContainer)
     }

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ZoneList: View {
     
-    @ObservedObject var gameContainer: DecodeGame
+    @ObservedObject var gameContainer: SearchGamesViewModel
 
     
     var zoneList = [ZoneViewModel]()
     @State private var searchText = ""
     
-    init(gameContainer: DecodeGame) {
+    init(gameContainer: SearchGamesViewModel) {
     self.gameContainer = gameContainer
         for game in gameContainer.games {
             if let zone = zoneList.first(where: {$0.model.name == game.zone}) {
@@ -48,7 +48,7 @@ struct ZoneList: View {
 }
 
 struct ZoneList_Previews: PreviewProvider {
-    static let gameContainer = DecodeGame()
+    static let gameContainer = SearchGamesViewModel()
     static var previews: some View {
         ZoneList(gameContainer: self.gameContainer)
     }

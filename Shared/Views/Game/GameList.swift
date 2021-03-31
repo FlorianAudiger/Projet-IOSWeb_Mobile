@@ -13,7 +13,7 @@ import SwiftUI
 struct GameList: View {
     
     
-    @ObservedObject var gameContainer: DecodeGame
+    @ObservedObject var gameContainer: SearchGamesViewModel
 
     @State private var searchText = ""
     
@@ -37,7 +37,7 @@ struct GameList: View {
 }
 
 struct GameList_Previews: PreviewProvider {
-    static let gameContainer = DecodeGame()
+    static let gameContainer = SearchGamesViewModel()
     static var previews: some View {
         GameList(gameContainer: self.gameContainer)
     }

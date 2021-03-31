@@ -11,7 +11,7 @@ import SwiftUI
 struct Projet_IOSWebApp: App {
     
     @Environment(\.scenePhase) private var lifecycle //Permet de déclencher la récupération des jeux lors de l'ouverture de l'app
-    @StateObject var gameContainer = DecodeGame()
+    @StateObject var gameContainer = SearchGamesViewModel()
     @State var tracksLoaded = false
     
     let helper = GameListHelper()
