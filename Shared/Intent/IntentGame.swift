@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-class IntentGame {
+class IntentGame: ObservableObject {
+    //ONLY CHANGES THE STATES OF SGMVM
     @ObservedObject var gameContainer: SearchGamesViewModel
     let helper = GameListHelper()
 
@@ -18,13 +19,18 @@ class IntentGame {
     }
     
     func loadGames(){
-        helper.loadGames(affectToContainer: affectToContainer)
+        self.gameContainer.searchGamesState = .loading
+        helper.loadGames(endOfRequest: gamesLoaded)
     }
     
     
-    func affectToContainer(_ gameList: [GameViewModel]){
-        gameContainer.games = gameList
-        //tracksLoaded = true
+    func gamesLoaded(_ gameList: [GameViewModel]){
+        if !gameList.isEmpty{
+            self.gameContainer.searchGamesState = .loaded(gameList)
+        }
+        else {
+            self.gameContainer.searchGamesState = .loadingError
+        }
     }
 }
 

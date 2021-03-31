@@ -5,42 +5,25 @@
 //  Created by user190534 on 3/22/21.
 //
 
-struct CurrentFestivalData: Codable {
-    var gameBookedList : [GameBookedData]
-}
-
-struct GameBookedData: Codable {
-    var exhibitorId: ExhibitorData?
-    var gameId: GameData?
-    var zone: ZoneData?
-}
-
-struct ZoneData: Codable {
-    var name: String
-}
-
-struct ExhibitorData: Codable {
-    var name: String
-}
-
-struct GameData: Codable {
-    var name: String
-    var ageMin: Int?
-    var duration: Int?
-    var nbPlayerMin: Int?
-    var nbPlayerMax: Int?
-    var category: String?
-    var notice: String?
-    var description: String?
-    var prototypeGame: Bool?
-}
-
 
 import Foundation
 import SwiftUI
 
-public class SearchGamesViewModel: ObservableObject {
+enum SearchGamesState{
+    case loading // Initial state, view oriented
+    case loaded([GameViewModel]) // Model-oriented, see below
+    case loadingError // View oriented
+}
 
+public class SearchGamesViewModel: ObservableObject {
+    
+    @Published var searchGamesState: SearchGamesState = .loading {
+        didSet {
+            guard case let .loaded(games) = searchGamesState else { return }
+            self.games = games
+            print("SearchGamesViewModel - jeux assignés :", self.games.count)
+        }
+    }
     @Published var games = [GameViewModel]()
     
     

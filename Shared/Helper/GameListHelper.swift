@@ -7,8 +7,38 @@
 
 import Foundation
 
+struct CurrentFestivalData: Codable {
+    var gameBookedList : [GameBookedData]
+}
+
+struct GameBookedData: Codable {
+    var exhibitorId: ExhibitorData?
+    var gameId: GameData?
+    var zone: ZoneData?
+}
+
+struct ZoneData: Codable {
+    var name: String
+}
+
+struct ExhibitorData: Codable {
+    var name: String
+}
+
+struct GameData: Codable {
+    var name: String
+    var ageMin: Int?
+    var duration: Int?
+    var nbPlayerMin: Int?
+    var nbPlayerMax: Int?
+    var category: String?
+    var notice: String?
+    var description: String?
+    var prototypeGame: Bool?
+}
+
 struct GameListHelper {
-    func loadGames( affectToContainer: @escaping ([GameViewModel]) -> Void) {
+    func loadGames( endOfRequest: @escaping ([GameViewModel]) -> Void) {
         let urlFestival = URL(string: "https://festivaldujeu.herokuapp.com/api/festival/current")!
         var requestFestival = URLRequest(url: urlFestival)
         requestFestival.httpMethod = "GET"
@@ -65,10 +95,10 @@ struct GameListHelper {
                         tzone = "zone unknown"
                     }
                     tgameList.append(GameViewModel(Game(name: tname, ageMin: tageMin, nbPlayersMin: tnbPlayersMin, nbPlayersMax: tnbPlayersMax, duration: tduration, category: tcategory, notice: tnotice, description: tdescription, publisher: tpublisher, prototypeGame: tprototypeGame, zone: tzone)))
-                    print(tgameList)
                 }
                 DispatchQueue.main.async {
-                    affectToContainer(tgameList)
+                    print("HELPER : jeux récupérés")
+                    endOfRequest(tgameList)
                 }
             } catch {
                 print("Error while decoding")

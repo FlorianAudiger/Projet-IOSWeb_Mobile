@@ -23,7 +23,7 @@ struct PublisherList: View {
     @State private var searchText = ""
     
     init(gameContainer: SearchGamesViewModel) {
-    self.gameContainer = gameContainer
+        self.gameContainer = gameContainer
         for game in gameContainer.games {
             if let publisher = publisherList.first(where: {$0.model.name == game.publisher}) {
                 publisher.model.addGame(game: game)
