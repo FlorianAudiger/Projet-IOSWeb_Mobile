@@ -10,33 +10,11 @@ import SwiftUI
 @main
 struct Projet_IOSWebApp: App {
     
-    @Environment(\.scenePhase) private var lifecycle //Permet de déclencher la récupération des jeux lors de l'ouverture de l'app
     @StateObject var gameContainer = SearchGamesViewModel()
-    @State var tracksLoaded = false
-    
-    let helper = GameListHelper()
     
     var body: some Scene {
         WindowGroup {
-            if (tracksLoaded){
-                MenuView(gameContainer: gameContainer)}
-            else {
-                LoadingView()
-            }
-        }.onChange(of: lifecycle) { phase in
-            switch phase{
-            case .active:
-                helper.loadGames(affectToContainer: affectToContainer)
-            case .background, .inactive:
-                break
-            @unknown default:
-                break
-            }
+                MenuView(gameContainer)
         }
-    }
-    
-    func affectToContainer(_ gameList: [GameViewModel]){
-        gameContainer.games = gameList
-        tracksLoaded = true
     }
 }

@@ -18,6 +18,7 @@
 		B4B20956260E547700529A6A /* PublisherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20955260E547700529A6A /* PublisherItem.swift */; };
 		B4B2095A260E548D00529A6A /* PublisherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20959260E548D00529A6A /* PublisherDetails.swift */; };
 		B4B20969260E929C00529A6A /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B20968260E929C00529A6A /* SearchBar.swift */; };
+		B71CDFCE261474EC00DFBFBC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71CDFCD261474EC00DFBFBC /* MenuView.swift */; };
 		CB18DC1526074B0500608CA5 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18DC1426074B0500608CA5 /* Zone.swift */; };
 		CB18DC1B26074D8400608CA5 /* ExhibitorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18DC1A26074D8400608CA5 /* ExhibitorViewModel.swift */; };
 		CB18DC2126074E2900608CA5 /* ZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18DC2026074E2900608CA5 /* ZoneViewModel.swift */; };
@@ -27,8 +28,6 @@
 		CB79308126093DF200AF819E /* SearchGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB79308026093DF200AF819E /* SearchGamesViewModel.swift */; };
 		CB80E95525FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
 		CB80E95625FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */; };
-		CB80E95725FB579700ED4B84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92D25FB579600ED4B84 /* ContentView.swift */; };
-		CB80E95825FB579700ED4B84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80E92D25FB579600ED4B84 /* ContentView.swift */; };
 		CB80E95925FB579700ED4B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB80E92E25FB579600ED4B84 /* Assets.xcassets */; };
 		CB80E95A25FB579700ED4B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB80E92E25FB579600ED4B84 /* Assets.xcassets */; };
 		CBD36B65260FC89E00EE1C61 /* ZoneList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD36B64260FC89E00EE1C61 /* ZoneList.swift */; };
@@ -50,6 +49,7 @@
 		B4B20955260E547700529A6A /* PublisherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherItem.swift; sourceTree = "<group>"; };
 		B4B20959260E548D00529A6A /* PublisherDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherDetails.swift; sourceTree = "<group>"; };
 		B4B20968260E929C00529A6A /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B71CDFCD261474EC00DFBFBC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CB18DC1426074B0500608CA5 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		CB18DC1A26074D8400608CA5 /* ExhibitorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExhibitorViewModel.swift; sourceTree = "<group>"; };
 		CB18DC2026074E2900608CA5 /* ZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneViewModel.swift; sourceTree = "<group>"; };
@@ -58,7 +58,6 @@
 		CB6D60C32603E9B100320864 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CB79308026093DF200AF819E /* SearchGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGamesViewModel.swift; sourceTree = "<group>"; };
 		CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projet_IOSWebApp.swift; sourceTree = "<group>"; };
-		CB80E92D25FB579600ED4B84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CB80E92E25FB579600ED4B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB80E93325FB579600ED4B84 /* Projet IOSWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet IOSWeb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB80E93625FB579600ED4B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 				B4B2094F260E541800529A6A /* Publisher */,
 				B4B2094C260E53F300529A6A /* Game */,
 				CB6D60C32603E9B100320864 /* SearchView.swift */,
+				B71CDFCD261474EC00DFBFBC /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,7 +196,6 @@
 				CB26EA012601481C00B34147 /* Models */,
 				CB26EA00260147FE00B34147 /* Views */,
 				CB80E92C25FB579600ED4B84 /* Projet_IOSWebApp.swift */,
-				CB80E92D25FB579600ED4B84 /* ContentView.swift */,
 				CB80E92E25FB579600ED4B84 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -322,7 +321,7 @@
 				B4B20956260E547700529A6A /* PublisherItem.swift in Sources */,
 				B474998826025D61002E9387 /* GameViewModel.swift in Sources */,
 				CBD36B71260FD75700EE1C61 /* GameItem2.swift in Sources */,
-				CB80E95725FB579700ED4B84 /* ContentView.swift in Sources */,
+				B71CDFCE261474EC00DFBFBC /* MenuView.swift in Sources */,
 				B45ED4D1260CAB7700399D64 /* GameListHelper.swift in Sources */,
 				CB18DC1B26074D8400608CA5 /* ExhibitorViewModel.swift in Sources */,
 				B468D3652602580600692CD7 /* Game.swift in Sources */,
@@ -348,7 +347,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB80E95825FB579700ED4B84 /* ContentView.swift in Sources */,
 				CB80E95625FB579700ED4B84 /* Projet_IOSWebApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

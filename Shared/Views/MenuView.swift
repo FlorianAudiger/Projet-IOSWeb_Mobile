@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct MenuView: View {
-    
     @ObservedObject var gameContainer: SearchGamesViewModel
+    
+    init(_ sGVM: SearchGamesViewModel){
+        self.gameContainer = sGVM
+    }
     
     var body: some View {
         NavigationView {
@@ -59,12 +62,20 @@ struct MenuView: View {
             .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
             }
         }
+        .onAppear(){
+            //intent.loadGames()
+            
+        }
     }
 }
+
+
+
+
 
 struct MenuView_Previews: PreviewProvider {
     static let gameContainer = SearchGamesViewModel()
     static var previews: some View {
-        MenuView(gameContainer: self.gameContainer)
+        MenuView(gameContainer)
     }
 }

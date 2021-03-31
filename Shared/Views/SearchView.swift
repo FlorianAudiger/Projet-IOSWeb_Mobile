@@ -94,7 +94,7 @@ struct SearchView: View {
                     }
                 }
                 Section {
-                    NavigationLink(destination: MenuView(gameContainer: gameContainer)) {
+                    NavigationLink(destination: MenuView(gameContainer)) {
                                    ButtonSearchView()
                                 }
                 }
