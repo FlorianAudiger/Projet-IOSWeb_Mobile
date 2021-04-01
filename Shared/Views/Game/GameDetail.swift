@@ -31,7 +31,6 @@ struct GameDetail: View {
                     VStack{
                         HStack{
                             Image(systemName: "gamecontroller")
-                            
                             Text("\(game.name)")
                         }
                         HStack{
@@ -53,38 +52,36 @@ struct GameDetail: View {
                             Text("\(game.zone)")
                         }
                         
-                    }.padding(.bottom, 30.0).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    }.font(.title2)
                     VStack{
                         HStack{
                             Image(systemName: "timer")
                             Text("\(game.duration)"+"'")
-                            Image(systemName: "person.3")
-                            Text("\(game.nbPlayersMin)"+"-"+"\(game.nbPlayersMax)")
+                            Text(" | ")
                             Image(systemName: "person")
                             Text("\(game.ageMin)"+"+")
-                        }.font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                        .padding(.bottom, 30.0)
-                        
+                        }.font(.title)
+                        Image(systemName: "person.3")
+                        Text("\(game.nbPlayersMin)"+"-"+"\(game.nbPlayersMax)").font(.title)
                         VStack{
                             HStack{
                                 Image(systemName: "doc.text")
-                                Link("notice : " + game.notice, destination: URL(string: "https://www.youtube.com")!)
+                                Link("Notice", destination: URL(string: "https://festivaldujeu.netlify.app/#/")!)
                                     .foregroundColor(.blue)
-                                    .font(.body)
+                                    .font(.title2)
                             }
-                            Spacer()
                         }
-                        HStack{
-                            Image(systemName: "arrow.down.circle")
-                            Text("Description")
-                            Spacer()
+                        VStack{
+                            HStack{
+                                Image(systemName: "questionmark")
+                                Text("Description")
+                            }.font(.title2)
+                            HStack{
+                                Text("\(game.description)")
+                                Spacer()
+                            }.font(.title3)
                         }
-                        
-                        HStack{
-                            Text("\(game.description)")
-                            Spacer()
-                        }
-                    }.padding(.horizontal, 30.0).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    }.padding(.horizontal, 30.0)
                 }
                 
                 
