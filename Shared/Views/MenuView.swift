@@ -24,6 +24,13 @@ struct MenuView: View {
         return true
     }
     
+    var errorLoading : Bool{
+        guard case .loadingError = self.gameContainer.searchGamesState else {
+            return false
+        }
+        return true
+    }
+    
     
     
     var body: some View {
@@ -64,14 +71,21 @@ struct MenuView: View {
                             ButtonGreen("Liste des zones")
                         }
                         Spacer()
+                        Button("Refresh"){
+                            intent.loadGames()
+                        }
                     }
                     .navigationBarTitle("Le Festival Du Jeu", displayMode: .inline)
-                } else {
+                }
+                else {
                     LoadingView()
+                    if errorLoading {
+                        Text("Error while loading games, probably there's no festival at the moment")
+                    }
                 }
             }
         }
-        .onAppear(){
+        .onAppear{
             print("\n\n\n MENU VIEW APPEARS")
             intent.loadGames()
         }

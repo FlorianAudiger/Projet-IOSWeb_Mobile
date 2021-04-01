@@ -29,8 +29,8 @@ struct GameData: Codable {
     var name: String
     var ageMin: Int?
     var duration: Int?
-    var nbPlayerMin: Int?
-    var nbPlayerMax: Int?
+    var nbPlayersMin: Int?
+    var nbPlayersMax: Int?
     var category: String?
     var notice: String?
     var description: String?
@@ -67,8 +67,8 @@ struct GameListHelper {
                         tname = game.name
                         tageMin = game.ageMin ?? 0
                         tduration = game.duration ?? 0
-                        tnbPlayersMin = game.nbPlayerMin ?? 0
-                        tnbPlayersMax = game.nbPlayerMax ?? 0
+                        tnbPlayersMin = game.nbPlayersMin ?? 0
+                        tnbPlayersMax = game.nbPlayersMax ?? 0
                         tcategory = game.category ?? "category unknown"
                         tnotice = game.notice ?? "no notice"
                         tdescription = game.description ?? "no description"

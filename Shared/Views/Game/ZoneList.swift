@@ -12,22 +12,9 @@ struct ZoneList: View {
     @ObservedObject var gameContainer: SearchGamesViewModel
 
     
-    var zoneList = [ZoneViewModel]()
+    @State var zoneList = [ZoneViewModel]()
     @State private var searchText = ""
-    
-    init(gameContainer: SearchGamesViewModel) {
-    self.gameContainer = gameContainer
-        for game in gameContainer.games {
-            if let zone = zoneList.first(where: {$0.model.name == game.zone}) {
-                zone.model.addGame(game: game)
-            }
-            else {
-                zoneList.append(ZoneViewModel(Zone(name: game.zone, gameList: [game])))
-            }
-        }
-        print("zoneList :", zoneList)
-    }
-    
+        
     
 
     var body: some View {
@@ -43,6 +30,18 @@ struct ZoneList: View {
                 //}
             }.padding(.trailing, -24.0)
             .navigationTitle("Liste des zones")
+        }
+        .onAppear{
+            zoneList.removeAll()
+                for game in gameContainer.games {
+                    if let zone = zoneList.first(where: {$0.model.name == game.zone}) {
+                        zone.model.addGame(game: game)
+                    }
+                    else {
+                        zoneList.append(ZoneViewModel(Zone(name: game.zone, gameList: [game])))
+                    }
+                }
+                print("zoneList :", zoneList)
         }
     }
 }
